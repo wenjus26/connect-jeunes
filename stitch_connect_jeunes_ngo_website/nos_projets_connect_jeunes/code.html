@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects | Connect Jeunes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#614000",
+                    "outline": "#717782",
+                    "inverse-primary": "#a3c9ff",
+                    "surface-light": "#f8fafc",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#dce9ff",
+                    "surface-tint": "#0260aa",
+                    "surface-dim": "#cbdbf5",
+                    "secondary": "#805600",
+                    "secondary-fixed": "#ffddb0",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary-fixed": "#281800",
+                    "surface-container-highest": "#d3e4fe",
+                    "surface-container": "#e5eeff",
+                    "surface": "#f8f9ff",
+                    "energy-gradient-end": "#e94b23",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-container": "#cadfff",
+                    "background": "#f8f9ff",
+                    "on-primary-fixed-variant": "#004882",
+                    "primary-container": "#0c63ad",
+                    "on-primary-fixed": "#001c38",
+                    "inverse-surface": "#213145",
+                    "primary-fixed-dim": "#a3c9ff",
+                    "on-background": "#0b1c30",
+                    "surface-container-low": "#eff4ff",
+                    "on-surface": "#0b1c30",
+                    "primary-fixed": "#d3e4ff",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#d3e4fe",
+                    "tertiary-fixed-dim": "#5fd9d1",
+                    "on-tertiary-fixed": "#00201e",
+                    "energy-gradient-start": "#f1a500",
+                    "secondary-container": "#fdaf16",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#7ef6ed",
+                    "on-tertiary-fixed-variant": "#00504c",
+                    "on-surface-variant": "#414751",
+                    "on-secondary-container": "#694600",
+                    "primary": "#004b87",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#00534f",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#ffba46",
+                    "on-tertiary-container": "#78f0e8",
+                    "tertiary-container": "#006d68",
+                    "outline-variant": "#c1c7d3",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "stack-md": "24px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "margin-desktop": "40px",
+                    "stack-lg": "48px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-sm": ["Montserrat"],
+                    "label-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #f8f9ff; color: #0b1c30; }
+        .energy-gradient { background: linear-gradient(135deg, #f1a500 0%, #e94b23 100%); }
+        .glass-header { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.2); }
+        .ambient-shadow { box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04); }
+        .featured-border { border-top: 4px solid; border-image: linear-gradient(to right, #f1a500, #e94b23) 1; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .tab-active { color: #004b87; border-bottom: 2px solid #004b87; padding-bottom: 4px; }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/20 shadow-sm transition-all duration-300 ease-in-out h-20">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-full">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-primary">Connect Jeunes</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Programs</a>
+<a class="font-label-lg text-label-lg text-primary font-bold border-b-2 border-primary pb-1" href="#">Projects</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Events</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" href="#">News</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex font-label-lg text-label-lg text-on-surface-variant hover:opacity-80 transition-opacity">Gallery</button>
+<button class="energy-gradient text-white px-6 py-2.5 rounded-full font-label-lg text-label-lg hover:opacity-90 transition-opacity shadow-lg">Donate</button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-stack-lg">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-gutter mb-stack-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-stack-md">
+<div class="max-w-2xl">
+<span class="font-label-lg text-label-lg text-secondary uppercase tracking-widest mb-2 block">Our Impact</span>
+<h1 class="font-display text-display text-on-background mb-4">Driving Change Through <span class="text-primary italic">Action</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Explore our diverse portfolio of youth-led projects designed to bridge the digital divide, foster entrepreneurship, and build sustainable communities.</p>
+</div>
+<div class="flex flex-wrap gap-stack-sm mb-2">
+<button class="bg-primary text-white px-5 py-2 rounded-full font-label-lg text-label-lg">All Projects</button>
+<button class="bg-surface-container-low text-on-surface-variant hover:bg-primary-fixed transition-colors px-5 py-2 rounded-full font-label-lg text-label-lg">Education</button>
+<button class="bg-surface-container-low text-on-surface-variant hover:bg-primary-fixed transition-colors px-5 py-2 rounded-full font-label-lg text-label-lg">Technology</button>
+<button class="bg-surface-container-low text-on-surface-variant hover:bg-primary-fixed transition-colors px-5 py-2 rounded-full font-label-lg text-label-lg">Sustainability</button>
+</div>
+</div>
+</section>
+<!-- Projects Bento Grid -->
+<section class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Project Card 1 (Large/Featured) -->
+<article class="md:col-span-8 bg-surface-container-lowest rounded-xl ambient-shadow overflow-hidden group hover:translate-y-[-4px] transition-all duration-300 featured-border">
+<div class="grid grid-cols-1 md:grid-cols-2 h-full">
+<div class="relative overflow-hidden min-h-[300px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A dynamic wide shot of a modern, brightly lit youth innovation hub. Young individuals from diverse backgrounds are collaborating on laptops and digital displays in a workspace filled with vibrant energy-gradient accents. The aesthetic is clean, professional, and filled with optimistic light, showcasing a high-tech community center environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCE0E-oVY9vTSvlOj38cBMsrPDr3B4uzViFzul0HCDz0xiIsQylmwzUYBV9MTtZcytkx1hxIhbPtTKSV6RcGymYTj5EXTyr9c_g9NPtOhghrtJLmzQXkuIvjtauKbfAIOkU3sd3amyJ75Ijl6noEqQ4STX7zW_Z7An12wyU-ERqIYkB-oHr0w95SYpnnypwneqQxXm_pYEt1uyTmuue2_AgbsbOIP24zSk6d0PjY6OoAA38VReAK3vn')"></div>
+<div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full font-label-md text-label-md">Active</div>
+</div>
+<div class="p-8 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 text-outline mb-3">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-label-lg text-label-lg">Abidjan, Ivory Coast</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4 group-hover:text-primary transition-colors">Tech Bridge Academy</h3>
+<p class="text-on-surface-variant mb-6 line-clamp-3">Providing advanced coding and digital literacy training to 5,000+ underprivileged youth to prepare them for the global digital economy.</p>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center text-body-sm font-label-lg">
+<span class="text-on-surface">5,240 Beneficiaries</span>
+<span class="text-primary">75% Complete</span>
+</div>
+<div class="w-full bg-surface-container h-2.5 rounded-full overflow-hidden">
+<div class="energy-gradient h-full rounded-full" style="width: 75%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">Funding Partner</span>
+<span class="font-label-lg text-label-lg text-on-surface">Global Tech Initiative</span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full font-label-lg text-label-lg hover:opacity-80 transition-all flex items-center gap-2 group/btn">
+                                View Details
+                                <span class="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Project Card 2 (Standard) -->
+<article class="md:col-span-4 bg-surface-container-lowest rounded-xl ambient-shadow overflow-hidden group hover:translate-y-[-4px] transition-all duration-300">
+<div class="h-48 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A lush, community-led rooftop urban garden in a sun-drenched city. Young students are actively planting green vegetables in modern wooden planters. The lighting is soft and warm, capturing a late afternoon golden hour feel. The atmosphere is sustainable, peaceful, and professional, reflecting a youth-focused environmental project." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAM1Se9cVE5WVvfzEa7FWrfVqqX12PBN7HRqBMRd9GnjcNA9gWtXXr6IQ1L4FDULku3F0jCXKZL_DFscjo4fK7p1-JR7W5MYnnmfIWoQzcb4jmLlUeTwf4KFPKfiZzn6oZ0LeU-D0I4hRKzClm-vLfG3tmultWjYWFq96VkeItz_Vbdbcz4ABuC2Wgrw6kq5w6s9tpH9GAxxZcwRsS2UshILRD2dpTQFdUClfgvlj-nD3maTdIw2esC')"></div>
+<div class="absolute top-4 left-4 bg-tertiary text-white px-3 py-1 rounded-full font-label-md text-label-md">Completed</div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 text-outline mb-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="font-label-lg text-label-lg">Dakar, Senegal</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-3 group-hover:text-primary transition-colors">Green Roots Urban Garden</h3>
+<p class="text-body-sm text-on-surface-variant mb-6 line-clamp-2">Establishing sustainable food systems in urban centers through youth-managed hydroponic farms.</p>
+<div class="space-y-3 mb-6">
+<div class="flex justify-between items-center text-body-sm">
+<span class="font-label-lg">1,200 Beneficiaries</span>
+<span class="text-tertiary font-bold">100%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full w-full"></div>
+</div>
+</div>
+<div class="flex flex-col mb-6">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">Funding Partner</span>
+<span class="font-label-lg text-label-lg text-on-surface">EcoLife Fund</span>
+</div>
+<button class="w-full border-2 border-primary text-primary px-6 py-2 rounded-full font-label-lg text-label-lg hover:bg-primary hover:text-white transition-all">
+                        View Details
+                    </button>
+</div>
+</article>
+<!-- Project Card 3 (Standard) -->
+<article class="md:col-span-4 bg-surface-container-lowest rounded-xl ambient-shadow overflow-hidden group hover:translate-y-[-4px] transition-all duration-300">
+<div class="h-48 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A clean, minimalist healthcare mobile clinic interior. A young medical professional is demonstrating medical software to a group of local villagers. The scene is illuminated by bright, clinical yet inviting lighting. The overall aesthetic is professional, medical, and high-quality, with subtle primary blue brand colors in the equipment and staff uniforms." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5w1A3aZ5EWBQAGBftsfxMmFwhwCoESmPGVbC9-25vmLY33S8PMV_nUwFBAm4gsi0sHkJtIGTnHuKD-xEI-gXjpeP4Ybk6dxiiUF51v6W0VJp6vOPu0lJOAxdyqsw3c1sIVKCrJbIPP5XC6gJV7s-hC2fl9YghFmyDdsGJ1kqYXS77kL-VVBLwOS0up1qcC070HJh6Hv8ySkLLYwzJi324M4M-WPrP3YmAUgqGWnClHZGkaCqN2jPU')"></div>
+<div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full font-label-md text-label-md">Active</div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 text-outline mb-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="font-label-lg text-label-lg">Nairobi, Kenya</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-3 group-hover:text-primary transition-colors">HealthLink Connect</h3>
+<p class="text-body-sm text-on-surface-variant mb-6 line-clamp-2">Mobile health clinics utilizing digital records to bring healthcare to remote youth populations.</p>
+<div class="space-y-3 mb-6">
+<div class="flex justify-between items-center text-body-sm">
+<span class="font-label-lg">8,500 Beneficiaries</span>
+<span class="text-primary font-bold">40%</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="energy-gradient h-full rounded-full w-[40%]"></div>
+</div>
+</div>
+<div class="flex flex-col mb-6">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">Funding Partner</span>
+<span class="font-label-lg text-label-lg text-on-surface">Universal Health Trust</span>
+</div>
+<button class="w-full border-2 border-primary text-primary px-6 py-2 rounded-full font-label-lg text-label-lg hover:bg-primary hover:text-white transition-all">
+                        View Details
+                    </button>
+</div>
+</article>
+<!-- Project Card 4 (Horizontal/Asymmetric) -->
+<article class="md:col-span-8 bg-surface-container-lowest rounded-xl ambient-shadow overflow-hidden group hover:translate-y-[-4px] transition-all duration-300">
+<div class="flex flex-col md:flex-row h-full">
+<div class="p-8 flex-1">
+<div class="flex items-center gap-2 text-outline mb-3">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-label-lg text-label-lg">Lagos, Nigeria</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4 group-hover:text-primary transition-colors">Venture Youth Incubator</h3>
+<p class="text-on-surface-variant mb-6">Empowering early-stage entrepreneurs with mentorship, seed funding, and workspace. This project has already launched 15 successful tech startups.</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="p-4 bg-surface-light rounded-xl">
+<span class="font-label-md text-label-md text-outline block mb-1">Impact</span>
+<span class="font-headline-sm text-headline-sm text-primary">15 Startups</span>
+</div>
+<div class="p-4 bg-surface-light rounded-xl">
+<span class="font-label-md text-label-md text-outline block mb-1">Status</span>
+<span class="font-headline-sm text-headline-sm text-secondary">90% Funded</span>
+</div>
+</div>
+<button class="bg-primary text-white px-8 py-3 rounded-full font-label-lg text-label-lg hover:opacity-90 transition-all shadow-md">
+                            Apply for Incubation
+                        </button>
+</div>
+<div class="md:w-1/3 relative overflow-hidden min-h-[250px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A professional business pitching session. A confident young entrepreneur stands in front of a digital screen displaying growth charts and branding. The room is modern, with minimalist furniture and high-quality studio lighting. The aesthetic is clean, corporate-modern, and aspirational, highlighting professional success and youth empowerment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAs4Zn56ZIUvmUK9QLZzKG1WeZOwpDYgZ7pmEtgoktTnM-Xiad0aD-t63lXxlkZ6cy9aY38x6EKACVHLrDpNLDVJT0WjPb9z8cqASTbSu6dkqO-7SHupHw6-pLC1IaoIQgCWXV4B9wl_NkavIMk0F5NVTn9ab_IEGB_5neq3DZZdcwjmg8QaHn8rT2ANeTqVkD4EpLku21f_mbP7NMI2lL1kvVHDeUzNdA78fl8uMESZlKK6l7wFcSn')"></div>
+</div>
+</div>
+</article>
+</section>
+<!-- CTA Section -->
+<section class="max-w-container-max mx-auto px-gutter mt-stack-lg">
+<div class="energy-gradient rounded-xl p-stack-lg text-white text-center relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-display text-headline-lg mb-4">Want to Make a Difference?</h2>
+<p class="font-body-lg text-body-lg max-w-xl mx-auto mb-8 text-white/90">Join our network of partners and volunteers. Whether through funding or mentorship, your contribution directly impacts the future of youth leaders.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-white text-primary px-10 py-3 rounded-full font-label-lg text-label-lg hover:bg-opacity-90 transition-all shadow-xl">Become a Partner</button>
+<button class="border-2 border-white text-white px-10 py-3 rounded-full font-label-lg text-label-lg hover:bg-white hover:text-primary transition-all">Volunteer Today</button>
+</div>
+</div>
+<!-- Abstract decorative shapes -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-black/10 rounded-full blur-3xl"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest w-full rounded-t-xl transition-all duration-200">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg max-w-container-max mx-auto px-gutter py-stack-lg">
+<div class="space-y-4">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">Connect Jeunes</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Empowering the next generation of African leaders through innovation, education, and sustainable community projects.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-primary font-bold mb-6">Our Programs</h4>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-secondary-container transition-colors" href="#">Digital Literacy</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">Youth Entrepreneurship</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">Sustainable Farming</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">Women in Tech</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-primary font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-secondary-container transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">Latest Projects</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">Upcoming Events</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">News Portal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-primary font-bold mb-6">Transparency</h4>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-secondary-container transition-colors" href="#">Annual Reports</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-secondary-container transition-colors" href="#">Contact Support</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter py-6 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-sm text-body-sm text-outline">© 2024 Connect Jeunes. Empowering the next generation.</p>
+<div class="flex gap-6">
+<span class="font-body-sm text-body-sm text-outline">All Rights Reserved</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for scrolling
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md', 'bg-surface/95');
+            } else {
+                header.classList.remove('shadow-md', 'bg-surface/95');
+            }
+        });
+
+        // Simple filter logic placeholder
+        const filterBtns = document.querySelectorAll('button[class*="bg-surface-container-low"]');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.replace('bg-primary', 'bg-surface-container-low'));
+                filterBtns.forEach(b => b.classList.replace('text-white', 'text-on-surface-variant'));
+                btn.classList.replace('bg-surface-container-low', 'bg-primary');
+                btn.classList.replace('text-on-surface-variant', 'text-white');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inscription - Sommet Annuel du Leadership Jeune | Connect Jeunes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#614000",
+                    "on-primary-fixed-variant": "#004882",
+                    "primary-container": "#0c63ad",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "tertiary-fixed": "#7ef6ed",
+                    "energy-gradient-end": "#e94b23",
+                    "surface-container": "#e5eeff",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#d3e4ff",
+                    "surface-variant": "#d3e4fe",
+                    "secondary-fixed": "#ffddb0",
+                    "inverse-surface": "#213145",
+                    "tertiary-fixed-dim": "#5fd9d1",
+                    "surface-bright": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#694600",
+                    "on-surface": "#0b1c30",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#00201e",
+                    "primary": "#004b87",
+                    "outline": "#717782",
+                    "on-background": "#0b1c30",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-surface-variant": "#414751",
+                    "surface": "#f8f9ff",
+                    "tertiary": "#00534f",
+                    "secondary": "#805600",
+                    "primary-fixed-dim": "#a3c9ff",
+                    "on-secondary-fixed": "#281800",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#001c38",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#ffba46",
+                    "tertiary-container": "#006d68",
+                    "on-primary-container": "#cadfff",
+                    "outline-variant": "#c1c7d3",
+                    "surface-container-low": "#eff4ff",
+                    "on-tertiary-fixed-variant": "#00504c",
+                    "surface-light": "#f8fafc",
+                    "surface-container-high": "#dce9ff",
+                    "background": "#f8f9ff",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#d3e4fe",
+                    "surface-tint": "#0260aa",
+                    "inverse-primary": "#a3c9ff",
+                    "on-tertiary": "#ffffff",
+                    "energy-gradient-start": "#f1a500",
+                    "secondary-container": "#fdaf16",
+                    "on-tertiary-container": "#78f0e8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "margin-mobile": "16px",
+                    "stack-md": "24px",
+                    "stack-lg": "48px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "stack-sm": "12px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "label-lg": ["Inter"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Montserrat"],
+                    "body-sm": ["Inter"],
+                    "display": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #f1a500 0%, #e94b23 100%);
+        }
+        .glass-nav {
+            background: rgba(248, 249, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .ambient-shadow {
+            box-shadow: 0 30px 60px -12px rgba(11, 28, 48, 0.04), 0 18px 36px -18px rgba(11, 28, 48, 0.05);
+        }
+        .form-input:focus {
+            box-shadow: 0 0 0 4px rgba(12, 99, 173, 0.1);
+        }
+        .step-active {
+            @apply border-primary text-primary;
+        }
+        .step-inactive {
+            @apply border-outline-variant text-on-surface-variant;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+
+<style>
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+  }
+  .energy-gradient {
+    background: linear-gradient(135deg, #f1a500 0%, #e94b23 100%) !important;
+  }
+  .btn-donate {
+    border-radius: 0px !important;
+  }
+  #mobile-menu {
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid #f1f5f9;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  #mobile-menu.active {
+    transform: translateX(0);
+  }
+  @media (min-width: 768px) {
+    #mobile-menu {
+      display: none !important;
+    }
+  }
+</style>
+
+<header class="fixed top-0 w-full z-50 glass-nav border-b border-white/20 shadow-sm h-20 transition-all duration-300">
+  <div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-full">
+    <a href="index.html" class="flex items-center gap-2">
+      <img alt="Connect Jeunes Logo" class="h-8 w-auto" src="logo.svg"/>
+    </a>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-8 items-center">
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-home" href="index.html">Accueil</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-about" href="index.html#about">Notre Histoire</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-programs" href="programmes.html">Programmes</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-projects" href="projets.html">Projets</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-events" href="evenements.html">Événements</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-blog" href="blog.html">Actualités</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-contact" href="contact.html">Contact</a>
+    </nav>
+    
+    <!-- Action Buttons & Menu Toggle -->
+    <div class="flex items-center gap-4">
+      <a href="galerie.html" class="hidden lg:flex px-6 py-2 rounded-full border-1.5 border-primary text-primary font-label-lg text-label-lg hover:bg-primary/5 transition-all" id="nav-gallery">Galerie</a>
+      <a href="don.html" class="energy-gradient text-white px-8 py-2.5 btn-donate font-label-lg text-label-lg shadow-lg hover:opacity-90 transition-opacity" id="nav-donate">Faire un Don</a>
+      
+      <!-- Hamburger Toggle Button -->
+      <button id="mobile-menu-toggle" class="md:hidden text-primary focus:outline-none flex items-center justify-center p-2 rounded-lg hover:bg-primary-container/10 transition-colors">
+        <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Premium Mobile Drawer Menu Overlay (Inspired by pcc-benin.org) -->
+  <div id="mobile-menu">
+    <div class="flex-grow flex flex-col justify-between p-6 overflow-y-auto h-full">
+      <!-- Grouped Links -->
+      <div class="space-y-6">
+        
+        <!-- Section: Découvrir -->
+        <div>
+          <h4 class="font-label-lg text-primary text-xs uppercase tracking-wider mb-2 font-bold opacity-80">Découvrir</h4>
+          <div class="grid grid-cols-2 gap-2">
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-home" href="index.html">
+              <span class="material-symbols-outlined text-sm">home</span> Accueil
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-about" href="index.html#about">
+              <span class="material-symbols-outlined text-sm">history</span> Histoire
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-partners" href="partenaires.html">
+              <span class="material-symbols-outlined text-sm">handshake</span> Partenaires
+            </a>
+          </div>
+        </div>
+
+        <!-- Section: Nos Actions -->
+        <div>
+          <h4 class="font-label-lg text-primary text-xs uppercase tracking-wider mb-2 font-bold opacity-80">Nos Actions</h4>
+          <div class="grid grid-cols-2 gap-2">
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-programs" href="programmes.html">
+              <span class="material-symbols-outlined text-sm">school</span> Programmes
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-projects" href="projets.html">
+              <span class="material-symbols-outlined text-sm">rocket_launch</span> Projets
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-gallery" href="galerie.html">
+              <span class="material-symbols-outlined text-sm">photo_library</span> Galerie
+            </a>
+          </div>
+        </div>
+
+        <!-- Section: Communauté -->
+        <div>
+          <h4 class="font-label-lg text-primary text-xs uppercase tracking-wider mb-2 font-bold opacity-80">Actualité & Événements</h4>
+          <div class="grid grid-cols-2 gap-2">
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-events" href="evenements.html">
+              <span class="material-symbols-outlined text-sm">calendar_today</span> Événements
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-blog" href="blog.html">
+              <span class="material-symbols-outlined text-sm">newspaper</span> Actualités
+            </a>
+          </div>
+        </div>
+
+        <!-- Section: Contact -->
+        <div>
+          <h4 class="font-label-lg text-primary text-xs uppercase tracking-wider mb-2 font-bold opacity-80">Nous Rejoindre</h4>
+          <div class="grid grid-cols-1 gap-2">
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-contact" href="contact.html">
+              <span class="material-symbols-outlined text-sm">mail</span> Contactez-nous
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="mt-6 border-t border-slate-100 pt-4 space-y-4">
+        <!-- Contact details -->
+        <div class="text-[11px] text-on-surface-variant space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-xs">call</span>
+            <span>+229 97 10 63 78</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-xs">mail</span>
+            <span>info@connect-jeunes.org</span>
+          </div>
+        </div>
+
+        <!-- Social links -->
+        <div class="flex gap-3 opacity-75">
+          <a class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-xs">public</span></a>
+          <a class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-xs">forum</span></a>
+          <a class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-xs">mail</span></a>
+        </div>
+
+        <!-- Call to Action button -->
+        <a href="don.html" class="energy-gradient text-white text-center py-3 btn-donate font-label-lg shadow-lg hover:opacity-90 transition-opacity block w-full text-xs font-bold uppercase tracking-wider">Faire un Don</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="pt-20">
+<!-- Hero Header -->
+<header class="bg-surface-container-low py-stack-lg">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-stack-md">
+<div class="max-w-2xl">
+<span class="inline-block px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-md mb-4 uppercase tracking-wider">Événement Phare</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-stack-sm">Sommet Annuel du Leadership Jeune</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+                            Rejoignez plus de 500 jeunes leaders, innovateurs et entrepreneurs à Cotonou pour une journée de transformation et de collaboration stratégique.
+                        </p>
+</div>
+<div class="flex gap-stack-md bg-surface-container-lowest p-stack-md rounded-xl ambient-shadow">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary text-[32px]">calendar_today</span>
+<div>
+<p class="font-label-md text-label-md text-outline">Date</p>
+<p class="font-body-md text-body-md font-bold">15 Mars 2024</p>
+</div>
+</div>
+<div class="w-px bg-outline-variant h-10 self-center"></div>
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary text-[32px]">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-outline">Lieu</p>
+<p class="font-body-md text-body-md font-bold">Cotonou, Bénin</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<section class="max-w-container-max mx-auto px-gutter py-stack-lg flex flex-col lg:flex-row gap-gutter">
+<!-- Registration Form Area -->
+<div class="flex-1">
+<div class="bg-surface-container-lowest p-stack-lg rounded-xl ambient-shadow border-t-4 border-primary">
+<form class="space-y-stack-lg" id="registrationForm">
+<!-- Step 1: Personal Info -->
+<div class="space-y-stack-md">
+<div class="flex items-center gap-base mb-stack-sm">
+<span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</span>
+<h2 class="font-headline-sm text-headline-sm">Informations Personnelles</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Nom Complet</label>
+<input class="w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input" placeholder="Ex: Jean Mukendi" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Adresse Email</label>
+<input class="w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input" placeholder="jean.mukendi@email.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Numéro de Téléphone</label>
+<input class="w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input" placeholder="+229 97 10 63 78" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Date de Naissance</label>
+<input class="w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input" type="date"/>
+</div>
+</div>
+</div>
+<!-- Step 2: Professional Info -->
+<div class="space-y-stack-md">
+<div class="flex items-center gap-base mb-stack-sm">
+<span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">2</span>
+<h2 class="font-headline-sm text-headline-sm">Profil Académique &amp; Professionnel</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Statut Actuel</label>
+<select class="w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input">
+<option>Étudiant(e)</option>
+<option>Entrepreneur(e)</option>
+<option>Professionnel(le)</option>
+<option>Chercheur d'emploi</option>
+<option>Autre</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Organisation / Université</label>
+<input class="w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input" placeholder="Nom de votre institution" type="text"/>
+</div>
+</div>
+</div>
+<!-- Step 3: Event Specifics -->
+<div class="space-y-stack-md">
+<div class="flex items-center gap-base mb-stack-sm">
+<span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">3</span>
+<h2 class="font-headline-sm text-headline-sm">Détails de Participation</h2>
+</div>
+<div class="space-y-4">
+<label class="font-label-lg text-label-lg text-on-surface-variant block">Choix de l'Atelier (Session de l'après-midi)</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-stack-sm">
+<label class="relative flex flex-col p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-all has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/20 group">
+<input class="hidden peer" name="workshop" type="radio"/>
+<span class="material-symbols-outlined text-primary mb-2">groups</span>
+<span class="font-bold text-body-md">Leadership &amp; Gouvernance</span>
+<span class="text-label-md text-on-surface-variant">Gestion d'équipe</span>
+</label>
+<label class="relative flex flex-col p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-all has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/20 group">
+<input class="hidden peer" name="workshop" type="radio"/>
+<span class="material-symbols-outlined text-primary mb-2">rocket_launch</span>
+<span class="font-bold text-body-md">Innovation Numérique</span>
+<span class="text-label-md text-on-surface-variant">Digital &amp; Tech</span>
+</label>
+<label class="relative flex flex-col p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-all has-[:checked]:border-primary has-[:checked]:bg-primary-fixed/20 group">
+<input class="hidden peer" name="workshop" type="radio"/>
+<span class="material-symbols-outlined text-primary mb-2">volunteer_activism</span>
+<span class="font-bold text-body-md">Social</span>
+<span class="text-label-md text-on-surface-variant">Entrepreneuriat</span>
+</label>
+</div>
+</div>
+<div class="space-y-2 pt-4">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Régime Alimentaire (Déjeuner inclus)</label>
+<input class="w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input" placeholder="Allergies, végétarien, etc. (Optionnel)" type="text"/>
+</div>
+</div>
+<!-- Step 4: Motivation -->
+<div class="space-y-stack-md">
+<div class="flex items-center gap-base mb-stack-sm">
+<span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">4</span>
+<h2 class="font-headline-sm text-headline-sm">Votre Motivation</h2>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant">Pourquoi souhaitez-vous participer ?</label>
+<textarea class="w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input resize-none" placeholder="Parlez-nous de vos attentes et de vos objectifs pour ce sommet..." rows="4"></textarea>
+</div>
+</div>
+<!-- Step 5: Terms -->
+<div class="space-y-4 pt-4 border-t border-outline-variant">
+<label class="flex items-start gap-stack-sm cursor-pointer group">
+<input class="mt-1 w-5 h-5 rounded text-primary focus:ring-primary border-outline-variant" type="checkbox"/>
+<span class="text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">J'accepte la politique de confidentialité et les conditions d'utilisation de Connect Jeunes.</span>
+</label>
+<label class="flex items-start gap-stack-sm cursor-pointer group">
+<input class="mt-1 w-5 h-5 rounded text-primary focus:ring-primary border-outline-variant" type="checkbox"/>
+<span class="text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">J'autorise l'utilisation de mon image (photos/vidéos) à des fins promotionnelles de l'événement.</span>
+</label>
+</div>
+<div class="pt-stack-md">
+<button class="w-full py-4 rounded-xl kinetic-gradient text-white font-headline-sm shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-base" type="submit">
+                                Confirmer l'Inscription
+                                <span class="material-symbols-outlined">send</span>
+</button>
+<p class="text-center text-label-md text-outline mt-4 italic">Une confirmation vous sera envoyée par email sous 48h.</p>
+</div>
+</form>
+</div>
+</div>
+<!-- Sticky Sidebar -->
+<aside class="w-full lg:w-[380px] space-y-stack-md">
+<div class="sticky top-28 space-y-stack-md">
+<!-- Map Card -->
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow overflow-hidden">
+<div class="h-48 bg-surface-dim relative group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A clean, minimalist 3D isometric map illustration of Cotonou city center, featuring stylized white buildings and blue road networks. The aesthetic is modern and professional, matching an NGO's visual identity. Soft sunlight illuminates the scene with long, elegant shadows and a high-key light mode atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBevPvlW0kP7PgEeCWRYtPXRBEU-ZCzLaIxKQ1rT9rIjJ58cALttnc6KSUJ5iXqjrVhck2A9IlSVt-DqEFQxfqYA7jQkEL3wqR4v5S7vuKI4cZ0Nd0ndK8FCNf5Rh7MHViLkteniBkGA4Cmq8itMps5zUWJr9u--j1lYOR3QKdmQHSbB-tp0tE37l1H9lSoUKYvPZBaSG6l014RKMNxxcfzp-NRw-lbHf1mRSC7ZZOkCJ4Fbvhuzye3')">
+</div>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined text-primary text-5xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+<div class="p-stack-md">
+<h3 class="font-headline-sm text-headline-sm mb-2">Palais des Congrès de Cotonou</h3>
+<p class="text-body-sm text-on-surface-variant">Avenue Jean-Paul II, Cotonou, Bénin</p>
+<a class="inline-flex items-center gap-2 text-primary font-label-lg mt-4 hover:underline" href="#">
+                                Voir sur Google Maps
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Benefits Card -->
+<div class="bg-primary text-white rounded-xl ambient-shadow p-stack-md">
+<h3 class="font-headline-sm text-headline-sm mb-stack-md border-b border-white/20 pb-2">Avantages de l'Événement</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-stack-sm">
+<div class="bg-white/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div>
+<p class="font-bold text-body-md">Networking Stratégique</p>
+<p class="text-body-sm text-white/80">Connectez-vous avec des mentors et des pairs influents.</p>
+</div>
+</li>
+<li class="flex items-start gap-stack-sm">
+<div class="bg-white/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div>
+<p class="font-bold text-body-md">Certification</p>
+<p class="text-body-sm text-white/80">Obtenez un certificat officiel de leadership reconnu.</p>
+</div>
+</li>
+<li class="flex items-start gap-stack-sm">
+<div class="bg-white/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">psychology_alt</span>
+</div>
+<div>
+<p class="font-bold text-body-md">Mentorat Express</p>
+<p class="text-body-sm text-white/80">Sessions de 15 min avec des experts du secteur.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Support Card -->
+<div class="bg-surface-container-high rounded-xl p-stack-md border border-outline-variant">
+<p class="text-label-lg text-on-surface-variant mb-2">Besoin d'aide ?</p>
+<div class="flex items-center gap-stack-sm">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<div>
+<p class="text-body-sm font-bold text-on-surface">info@connect-jeunes.org</p>
+<p class="text-label-md text-on-surface-variant">Réponse sous 24h</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</section>
+</main>
+<!-- Footer -->
+
+<footer class="bg-surface-container-highest w-full rounded-t-xl pt-stack-lg">
+  <div class="max-w-container-max mx-auto px-gutter py-stack-lg">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg">
+      <div class="md:col-span-1">
+        <div class="flex items-center gap-2 mb-6">
+          <img alt="Logo" class="h-8 w-auto" src="logo.svg"/>
+        </div>
+        <p class="text-on-surface-variant font-body-sm mb-6">Bâtir les leaders de demain à travers l'innovation, l'éducation et la solidarité panafricaine.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+          <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">forum</span></a>
+          <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">mail</span></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-label-lg mb-6 text-primary uppercase tracking-wider">Organisation</h4>
+        <ul class="space-y-4">
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="index.html#about">Notre Histoire</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="programmes.html">Nos Programmes</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="partenaires.html">Partenaires</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-lg mb-6 text-primary uppercase tracking-wider">Ressources</h4>
+        <ul class="space-y-4">
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="projets.html">Projets récents</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="evenements.html">Événements à venir</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="blog.html">Actualités & Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-lg mb-6 text-primary uppercase tracking-wider">Support</h4>
+        <ul class="space-y-4">
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="contact.html">Contactez-nous</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="don.html">Faire un don</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="inscription-sommet.html">Inscription Sommet</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-stack-lg pt-stack-sm border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Connect Jeunes — Cotonou, Bénin. Au service de la jeunesse béninoise.</p>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">
+        Made by <a href="https://rejustewenoumi.com" target="_blank" rel="noopener" class="underline hover:text-primary transition-colors">rejustewenoumi.com</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+        // Micro-interaction for form focus and input movement
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.querySelector('label').style.color = '#004b87';
+                this.style.transform = 'translateX(4px)';
+            });
+            input.addEventListener('blur', function() {
+                this.parentElement.querySelector('label').style.color = '#414751';
+                this.style.transform = 'translateX(0px)';
+            });
+        });
+
+        // Sticky Navbar effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+                nav.style.height = '70px';
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.style.height = '80px';
+            }
+        });
+
+        // Simple form validation visual cue
+        document.getElementById('registrationForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            
+            btn.disabled = true;
+            btn.innerHTML = `<span class="material-symbols-outlined animate-spin">refresh</span> Chargement...`;
+            
+            setTimeout(() => {
+                btn.innerHTML = `<span class="material-symbols-outlined">check_circle</span> Envoyé avec succès`;
+                btn.classList.replace('kinetic-gradient', 'bg-tertiary-container');
+                
+                // Show floating success toast (simplified)
+                setTimeout(() => { window.location.href = 'confirmation-inscription.html'; }, 1000);
+            }, 1500);
+        });
+    </script>
+
+<script>
+  // Sticky Header Scroll animation
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (header) {
+      if (window.scrollY > 20) {
+        header.classList.add('shadow-md', 'h-16');
+        header.classList.remove('h-20', 'shadow-sm');
+      } else {
+        header.classList.add('h-20', 'shadow-sm');
+        header.classList.remove('shadow-md', 'h-16');
+      }
+    }
+  });
+
+  // Mobile drawer menu toggle (Premium UX with body scroll lock)
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+
+  if (mobileMenuToggle && mobileMenu && menuIcon) {
+    mobileMenuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('active');
+      if (isOpen) {
+        mobileMenu.classList.remove('active');
+        menuIcon.textContent = 'menu';
+        document.body.classList.remove('overflow-hidden');
+      } else {
+        mobileMenu.classList.add('active');
+        menuIcon.textContent = 'close';
+        document.body.classList.add('overflow-hidden');
+      }
+    });
+
+    // Close menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        menuIcon.textContent = 'menu';
+        document.body.classList.remove('overflow-hidden');
+      });
+    });
+  }
+
+  // Active page detection and highlighting
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = {
+    'index.html': 'nav-home',
+    'programmes.html': 'nav-programs',
+    'projets.html': 'nav-projects',
+    'evenements.html': 'nav-events',
+    'blog.html': 'nav-blog',
+    'contact.html': 'nav-contact',
+    'galerie.html': 'nav-gallery',
+  };
+
+  const activeId = navLinks[currentPath];
+  if (activeId) {
+    const activeLink = document.getElementById(activeId);
+    if (activeLink) {
+      activeLink.classList.add('text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1');
+      activeLink.classList.remove('text-on-surface-variant');
+    }
+    const mobActiveLink = document.getElementById('mob-' + activeId);
+    if (mobActiveLink) {
+      mobActiveLink.classList.add('text-primary', 'font-bold');
+      mobActiveLink.classList.remove('text-on-surface-variant');
+    }
+  }
+
+  // Active highlighting for hash links (Notre Histoire)
+  const highlightHash = () => {
+    if (window.location.hash === '#about') {
+      const homeLink = document.getElementById('nav-home');
+      const mobHomeLink = document.getElementById('mob-nav-home');
+      if (homeLink) homeLink.classList.remove('text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1');
+      if (mobHomeLink) mobHomeLink.classList.remove('text-primary', 'font-bold');
+      
+      const aboutLink = document.getElementById('nav-about');
+      const mobAboutLink = document.getElementById('mob-nav-about');
+      if (aboutLink) {
+        aboutLink.classList.add('text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1');
+        aboutLink.classList.remove('text-on-surface-variant');
+      }
+      if (mobAboutLink) {
+        mobAboutLink.classList.add('text-primary', 'font-bold');
+        mobAboutLink.classList.remove('text-on-surface-variant');
+      }
+    }
+  };
+  window.addEventListener('hashchange', highlightHash);
+  highlightHash();
+</script>
+
+</body></html>

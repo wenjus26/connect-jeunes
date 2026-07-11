@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Actualités | Connect Jeunes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#7ef6ed",
+                    "outline-variant": "#c1c7d3",
+                    "surface-variant": "#d3e4fe",
+                    "background": "#f8f9ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary-fixed-variant": "#614000",
+                    "surface-tint": "#0260aa",
+                    "on-primary-fixed-variant": "#004882",
+                    "surface-container-highest": "#d3e4fe",
+                    "primary-container": "#0c63ad",
+                    "surface-container-high": "#dce9ff",
+                    "tertiary-fixed-dim": "#5fd9d1",
+                    "surface-container-low": "#eff4ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container": "#e5eeff",
+                    "surface-light": "#f8fafc",
+                    "outline": "#717782",
+                    "on-tertiary-fixed-variant": "#00504c",
+                    "on-primary-fixed": "#001c38",
+                    "surface-dim": "#cbdbf5",
+                    "inverse-surface": "#213145",
+                    "on-background": "#0b1c30",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#fdaf16",
+                    "primary-fixed-dim": "#a3c9ff",
+                    "on-tertiary-fixed": "#00201e",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#694600",
+                    "surface": "#f8f9ff",
+                    "on-secondary-fixed": "#281800",
+                    "tertiary-container": "#006d68",
+                    "tertiary": "#00534f",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "energy-gradient-end": "#e94b23",
+                    "on-primary-container": "#cadfff",
+                    "on-surface": "#0b1c30",
+                    "primary-fixed": "#d3e4ff",
+                    "on-surface-variant": "#414751",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#78f0e8",
+                    "secondary": "#805600",
+                    "inverse-primary": "#a3c9ff",
+                    "primary": "#004b87",
+                    "secondary-fixed-dim": "#ffba46",
+                    "secondary-fixed": "#ffddb0",
+                    "energy-gradient-start": "#f1a500"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "stack-md": "24px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "margin-desktop": "40px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "stack-lg": "48px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "display": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "headline-sm": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+            color: #0b1c30;
+        }
+        .energy-gradient {
+            background: linear-gradient(135deg, #f1a500 0%, #e94b23 100%);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 30px -5px rgba(2, 96, 170, 0.04);
+        }
+        .featured-card-border {
+            border-top: 4px solid;
+            border-image: linear-gradient(to right, #f1a500, #e94b23) 1;
+        }
+    </style>
+</head>
+<body class="bg-background">
+
+<style>
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+  }
+  .energy-gradient {
+    background: linear-gradient(135deg, #f1a500 0%, #e94b23 100%) !important;
+  }
+  .btn-donate {
+    border-radius: 0px !important;
+  }
+  #mobile-menu {
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid #f1f5f9;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  #mobile-menu.active {
+    transform: translateX(0);
+  }
+  @media (min-width: 768px) {
+    #mobile-menu {
+      display: none !important;
+    }
+  }
+</style>
+
+<header class="fixed top-0 w-full z-50 glass-nav border-b border-white/20 shadow-sm h-20 transition-all duration-300">
+  <div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-full">
+    <a href="index.html" class="flex items-center gap-2">
+      <img alt="Connect Jeunes Logo" class="h-8 w-auto" src="logo.svg"/>
+    </a>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-8 items-center">
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-home" href="index.html">Accueil</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-about" href="index.html#about">Notre Histoire</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-programs" href="programmes.html">Programmes</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-projects" href="projets.html">Projets</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-events" href="evenements.html">Événements</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-blog" href="blog.html">Actualités</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-contact" href="contact.html">Contact</a>
+    </nav>
+    
+    <!-- Action Buttons & Menu Toggle -->
+    <div class="flex items-center gap-4">
+      <a href="galerie.html" class="hidden lg:flex px-6 py-2 rounded-full border-1.5 border-primary text-primary font-label-lg text-label-lg hover:bg-primary/5 transition-all" id="nav-gallery">Galerie</a>
+      <a href="don.html" class="energy-gradient text-white px-8 py-2.5 btn-donate font-label-lg text-label-lg shadow-lg hover:opacity-90 transition-opacity" id="nav-donate">Faire un Don</a>
+      
+      <!-- Hamburger Toggle Button -->
+      <button id="mobile-menu-toggle" class="md:hidden text-primary focus:outline-none flex items-center justify-center p-2 rounded-lg hover:bg-primary-container/10 transition-colors">
+        <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Premium Mobile Drawer Menu Overlay (Inspired by pcc-benin.org) -->
+  <div id="mobile-menu">
+    <div class="flex-grow flex flex-col justify-between p-6 overflow-y-auto h-full">
+      <!-- Grouped Links -->
+      <div class="space-y-6">
+        
+        <!-- Section: Découvrir -->
+        <div>
+          <h4 class="font-label-lg text-primary text-xs uppercase tracking-wider mb-2 font-bold opacity-80">Découvrir</h4>
+          <div class="grid grid-cols-2 gap-2">
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-home" href="index.html">
+              <span class="material-symbols-outlined text-sm">home</span> Accueil
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-about" href="index.html#about">
+              <span class="material-symbols-outlined text-sm">history</span> Histoire
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-partners" href="partenaires.html">
+              <span class="material-symbols-outlined text-sm">handshake</span> Partenaires
+            </a>
+          </div>
+        </div>
+
+        <!-- Section: Nos Actions -->
+        <div>
+          <h4 class="font-label-lg text-primary text-xs uppercase tracking-wider mb-2 font-bold opacity-80">Nos Actions</h4>
+          <div class="grid grid-cols-2 gap-2">
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-programs" href="programmes.html">
+              <span class="material-symbols-outlined text-sm">school</span> Programmes
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-projects" href="projets.html">
+              <span class="material-symbols-outlined text-sm">rocket_launch</span> Projets
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-gallery" href="galerie.html">
+              <span class="material-symbols-outlined text-sm">photo_library</span> Galerie
+            </a>
+          </div>
+        </div>
+
+        <!-- Section: Communauté -->
+        <div>
+          <h4 class="font-label-lg text-primary text-xs uppercase tracking-wider mb-2 font-bold opacity-80">Actualité & Événements</h4>
+          <div class="grid grid-cols-2 gap-2">
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-events" href="evenements.html">
+              <span class="material-symbols-outlined text-sm">calendar_today</span> Événements
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-blog" href="blog.html">
+              <span class="material-symbols-outlined text-sm">newspaper</span> Actualités
+            </a>
+          </div>
+        </div>
+
+        <!-- Section: Contact -->
+        <div>
+          <h4 class="font-label-lg text-primary text-xs uppercase tracking-wider mb-2 font-bold opacity-80">Nous Rejoindre</h4>
+          <div class="grid grid-cols-1 gap-2">
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-contact" href="contact.html">
+              <span class="material-symbols-outlined text-sm">mail</span> Contactez-nous
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="mt-6 border-t border-slate-100 pt-4 space-y-4">
+        <!-- Contact details -->
+        <div class="text-[11px] text-on-surface-variant space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-xs">call</span>
+            <span>+229 97 10 63 78</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-xs">mail</span>
+            <span>info@connect-jeunes.org</span>
+          </div>
+        </div>
+
+        <!-- Social links -->
+        <div class="flex gap-3 opacity-75">
+          <a class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-xs">public</span></a>
+          <a class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-xs">forum</span></a>
+          <a class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-xs">mail</span></a>
+        </div>
+
+        <!-- Call to Action button -->
+        <a href="don.html" class="energy-gradient text-white text-center py-3 btn-donate font-label-lg shadow-lg hover:opacity-90 transition-opacity block w-full text-xs font-bold uppercase tracking-wider">Faire un Don</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="pt-20">
+<!-- Hero / Featured News -->
+<section class="relative h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0" data-alt="A cinematic, high-resolution photograph of a diverse group of African youth engaged in a collaborative workshop, using modern laptops and tablets in a sun-drenched, professional open-plan office space. The lighting is warm and golden, reflecting the energy-gradient aesthetic. The depth of field is shallow, focusing on a young woman smiling as she points to a digital screen. The composition is clean and modern, evoking a sense of institutional credibility and grassroots vibrancy." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkjhuyYJbe9Dvww7OlpeGcSU6-6JeQn3NGmSav8BVs9AaGYDKSGmdmvy-dae2Z0xy9V3JofcfchJ1d7oKvSLgnsJEq742BA9R6kXUCdxLz3mGv44bAafuKeYa7KfwLR49xpau8lnbEF5cle6CgzdamS6fqsZP_8jXpTgOkzJxLZelOL_PBTzWjlKYjzNzwdP3sM2OjiU5aZDq-T29p5oJsGGDzjNCiZfdo6MbGXJP2TZP1A_Ppw8Y7')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-on-background/90 via-on-background/40 to-transparent z-10"></div>
+<div class="relative z-20 px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="max-w-2xl text-white">
+<span class="inline-block px-3 py-1 energy-gradient rounded-md font-label-md text-label-md mb-4 uppercase tracking-wider">À la une</span>
+<h1 class="font-display text-display mb-6">L'impact de la littératie numérique en 2024</h1>
+<p class="font-body-lg text-body-lg mb-8 text-surface-container-low">Découvrez comment nos nouveaux programmes de formation transforment les opportunités économiques pour la jeunesse africaine grâce aux outils numériques de pointe.</p>
+<button class="bg-primary text-white px-8 py-4 rounded-xl font-headline-sm text-headline-sm hover:bg-primary-container transition-all flex items-center gap-2 group">
+                        Lire la suite
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Search & Filter Bar -->
+<section class="py-stack-md bg-surface-container-low border-y border-outline-variant/20">
+<div class="px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full bg-primary text-white font-label-lg text-label-lg">Tout voir</button>
+<button class="px-4 py-2 rounded-full bg-white text-on-surface-variant hover:bg-surface-variant transition-colors font-label-lg text-label-lg">Impact Stories</button>
+<button class="px-4 py-2 rounded-full bg-white text-on-surface-variant hover:bg-surface-variant transition-colors font-label-lg text-label-lg">Organization News</button>
+<button class="px-4 py-2 rounded-full bg-white text-on-surface-variant hover:bg-surface-variant transition-colors font-label-lg text-label-lg">Innovations</button>
+<button class="px-4 py-2 rounded-full bg-white text-on-surface-variant hover:bg-surface-variant transition-colors font-label-lg text-label-lg">Field Reports</button>
+</div>
+<div class="relative w-full md:w-auto">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">filter_list</span>
+<select class="pl-10 pr-8 py-2 bg-white border-outline-variant rounded-lg font-label-lg text-label-lg focus:ring-primary min-w-[200px] appearance-none">
+<option>Plus récents</option>
+<option>Plus anciens</option>
+<option>Les plus lus</option>
+</select>
+</div>
+</div>
+</section>
+<!-- News Grid -->
+<section class="py-stack-lg px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Article 1 -->
+<article class="bg-white rounded-xl overflow-hidden ambient-shadow group hover:-translate-y-2 transition-transform duration-300">
+<div class="h-56 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A bright and vibrant photo of a group of young entrepreneurs pitching their ideas in a professional startup incubator setting. The environment is modern with glass walls and colorful furniture, utilizing the deep blue and orange palette of Connect Jeunes. The lighting is crisp and optimistic, focusing on the passion and innovation of the young leaders." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPK-7lD94VNwSp-olBrIsRGVOXWArxUmhXdRhR8rE2l4qEVFWAGN20qa7xv-EiJ2Ca6QkBIqA47InaQeITz7EjkC6CwYuUMF6gaglGOOmPeEvDGOnfl9lJuJPcMpC6AQC13gEdsMLs3uETdLIZzFb_RtlCwm2ggYxoeh7CMxyL_Z-9md6_N2OzZKvOoyiuZsYIzjIyCEojzgw9n_6PjGgab-3M53hkl03oczz2cgsWKDgVkU5QRQxv')"></div>
+<span class="absolute top-4 left-4 bg-tertiary-container text-tertiary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Innovations</span>
+</div>
+<div class="p-6">
+<div class="text-outline font-label-md text-label-md mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span> 12 Mars 2024
+                        </div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 line-clamp-2">Lancement de l'Incubateur CJ-Tech à Abidjan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-3">Nous sommes fiers d'annoncer l'ouverture de notre nouvel espace dédié à l'innovation technologique et à l'entrepreneuriat jeune.</p>
+<a class="text-primary font-label-lg text-label-lg font-bold flex items-center gap-1 hover:gap-3 transition-all" href="#">
+                            Lire l'article <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+</article>
+<!-- Article 2 -->
+<article class="bg-white rounded-xl overflow-hidden ambient-shadow group hover:-translate-y-2 transition-transform duration-300">
+<div class="h-56 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A portrait of a young male agricultural entrepreneur standing proudly in a lush green field of hydroponic vegetables. He is holding a digital tablet that displays crop health data. The aesthetic is clean and professional, with high-contrast lighting and a deep blue primary sky. The image conveys modern field reports and sustainable growth." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2MJPWhha-YI38_-hQp_aqT9Bjob1ZRLbl1Q9S905cYIPtBhqiITjMfXQhcErsZRp5c7jQK90RU_LILORcIm5t72TGMmC7LlF7AwVb1P_01QHTtD_7F63J7THjtzmBQDa4ZHwPRmEhfw7jljzm3Dgt_LMyldtJEa6VIuZME8rEallAxTZQWElcQ_7QIp2Wu9uPFYdbNQ6J5WNwjkR6QwWP0iVWq-wleFGghdq-oxvQgy2q4MFaQedN')"></div>
+<span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md">Impact Stories</span>
+</div>
+<div class="p-6">
+<div class="text-outline font-label-md text-label-md mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span> 08 Mars 2024
+                        </div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 line-clamp-2">Success Story: Le parcours inspirant de Moussa</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-3">D'étudiant à leader de l'agritech, découvrez comment Moussa a utilisé nos ressources pour révolutionner l'irrigation locale.</p>
+<a class="text-primary font-label-lg text-label-lg font-bold flex items-center gap-1 hover:gap-3 transition-all" href="#">
+                            Lire l'article <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+</article>
+<!-- Article 3 -->
+<article class="bg-white rounded-xl overflow-hidden ambient-shadow group hover:-translate-y-2 transition-transform duration-300">
+<div class="h-56 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A group of young people participating in a large-scale community forum, seated in an amphitheater-style setting. They are engaged in active discussion with several people raising their hands. The atmosphere is democratic and energetic, featuring soft blue shadows and white highlights. The visual style is professional and institutional yet grassroots." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLXd69m4znPcIJgvoYU4LJZF3Tql6zUfFqpCChlpuQxKe1xbB7EGFnD2fyfDgl6T21Tc5CdBxJqGyrfduy1O1uC67FgTiA0pgeyrFRN5JerNehII8FBk7Zmta9g_GomPmd0RJDmRV4F2yfaGCJWnydiY6t19A6Rw-XV-ckRsLedM9MQLL6opeXL0kwA5PEUvxC0BC3QF0Fd61LyyBTQvbSd5rt0mw6hieVhtEhYhUT0yZGyRNNA99w')"></div>
+<span class="absolute top-4 left-4 bg-surface-dim text-on-background px-3 py-1 rounded-full font-label-md text-label-md">Organization News</span>
+</div>
+<div class="p-6">
+<div class="text-outline font-label-md text-label-md mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span> 01 Mars 2024
+                        </div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 line-clamp-2">Forum Annuel de la Jeunesse : Inscrivez-vous !</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-3">Rejoignez-nous pour deux jours de débats, d'ateliers et de réseautage avec les leaders de demain. Les inscriptions sont désormais ouvertes.</p>
+<a class="text-primary font-label-lg text-label-lg font-bold flex items-center gap-1 hover:gap-3 transition-all" href="#">
+                            Lire l'article <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+</article>
+<!-- Article 4 -->
+<article class="bg-white rounded-xl overflow-hidden ambient-shadow group hover:-translate-y-2 transition-transform duration-300">
+<div class="h-56 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A detailed, macro photo of a young woman's hands skillfully assembling a solar power circuit. The lighting is focused and professional, highlighting the precision and technological focus. The scene is set in a modern workshop with high-end equipment, using the NGO's vibrant primary colors for a clean and corporate modern look." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSNNXmPZmIbjJeyjfgXYfCoWcylTtkJRtSb932bMPRxLWqPrlX1LJBmlgUtvZBPuJzf1v_dtLc1kbwvNL7HghZVYVewjaJWCs_TTrRgeiG3aC-0bwINHQpPXm5B7TUTJVA-ZYK8uP_ri45NGgiIb4V0RQgThLDmEaQa5yY8_bmAY_Zh8RAr8Aa8_L4jlSO7R1fL8mk_jI-OlIhHxch_t4E3f3t6Pxv7VqNR6PgfGBW0Kk1W6ApHuGh')"></div>
+<span class="absolute top-4 left-4 bg-tertiary-container text-tertiary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Field Reports</span>
+</div>
+<div class="p-6">
+<div class="text-outline font-label-md text-label-md mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span> 25 Février 2024
+                        </div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 line-clamp-2">L'énergie solaire au service de l'éducation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-3">Rapport de terrain sur l'installation de panneaux solaires dans 15 écoles rurales pour permettre l'accès au numérique.</p>
+<a class="text-primary font-label-lg text-label-lg font-bold flex items-center gap-1 hover:gap-3 transition-all" href="#">
+                            Lire l'article <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+</article>
+<!-- Article 5 -->
+<article class="bg-white rounded-xl overflow-hidden ambient-shadow group hover:-translate-y-2 transition-transform duration-300">
+<div class="h-56 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A candid, high-energy photo of young activists marching together with colorful banners, their faces showing determination and hope. The background is a vibrant city street under a clear blue sky. The visual style is kinetic and dynamic, with motion blur and deep blue and orange accents. It represents youth-led movements and civic engagement." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdVRccRAbZrHN5uciQUTOS3mZv4VfqAjMuFh5lnXKgdc3-tOQYz_dF3gNymeiOhV-SYKtwjs8LxqPp1KNg1DyOdisbCHH2Tc2_8GG7f4XUyUPTy4iCAWw5ek9sUccys6MBQS9-JN79VhTl7z3YO2kO-vAepJizEHRkaKrw4HOIKgTOZInv2YUldYAs6HaYO2qdaYEsCBTOUa-DPCkFqS_YQGAVdHU328r15EMWxwofScfwVc9Iqpx5')"></div>
+<span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md">Impact Stories</span>
+</div>
+<div class="p-6">
+<div class="text-outline font-label-md text-label-md mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span> 20 Février 2024
+                        </div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 line-clamp-2">Nouveau partenariat pour l'engagement civique</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-3">Connect Jeunes s'associe à des organisations internationales pour renforcer la voix des jeunes dans les politiques publiques.</p>
+<a class="text-primary font-label-lg text-label-lg font-bold flex items-center gap-1 hover:gap-3 transition-all" href="#">
+                            Lire l'article <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+</article>
+<!-- Article 6 -->
+<article class="bg-white rounded-xl overflow-hidden ambient-shadow group hover:-translate-y-2 transition-transform duration-300 border-t-4 border-energy-gradient-start">
+<div class="h-56 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A professional overhead shot of a modern laboratory table where young students are testing water quality samples. The scene is bright and clinical with vibrant orange safety gear and deep blue glass containers. The composition is structured and high-end, evoking scientific rigor and social innovation for local communities." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOgA_p69zzigyozlloSSVAa4ends2p__kQsF4V4Qiqq9C9uppNGwiKG8FUjGsjCmfkX26ge0w3vwuCpAhDJK4V8IvkFh1-KzKoVpqcWNwq9qbPIePQ3W_7zpbMlgHPRH-uhkTspkl-N8HSggpvkmqKwoWKYqPpBevgMQU3H7lMeMPWc-dZO9_D30tmmy-AbNzH_sWWb4jF9sZnf6MidWRFKsP2hatSqpOKAttm_wr7sIakl_rpSpZo')"></div>
+<span class="absolute top-4 left-4 bg-surface-dim text-on-background px-3 py-1 rounded-full font-label-md text-label-md">Innovations</span>
+</div>
+<div class="p-6">
+<div class="text-outline font-label-md text-label-md mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span> 15 Février 2024
+                        </div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 line-clamp-2">Solutions d'eau potable : l'innovation par les jeunes</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-3">Résultats de notre dernier hackathon sur les problématiques d'assainissement de l'eau en milieu périurbain.</p>
+<a class="text-primary font-label-lg text-label-lg font-bold flex items-center gap-1 hover:gap-3 transition-all" href="#">
+                            Lire l'article <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+</article>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="border-2 border-primary text-primary px-8 py-3 rounded-xl font-label-lg text-label-lg font-bold hover:bg-primary hover:text-white transition-all">
+                    Charger plus d'articles
+                </button>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-stack-lg px-margin-desktop">
+<div class="max-w-container-max mx-auto energy-gradient rounded-3xl p-12 relative overflow-hidden ambient-shadow">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[300px] absolute -right-20 -top-20">mail</span>
+</div>
+<div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-white mb-4">Restez connectés à l'avenir</h2>
+<p class="text-white/90 font-body-lg text-body-lg">Abonnez-vous à notre newsletter mensuelle pour recevoir des histoires d'impact, des opportunités exclusives et les dernières actualités de notre réseau.</p>
+</div>
+<div class="bg-white/10 backdrop-blur-md p-2 rounded-2xl flex flex-col sm:flex-row gap-2 border border-white/20">
+<input class="flex-grow bg-white/10 border-none text-white placeholder:text-white/60 rounded-xl focus:ring-white py-4 px-6" placeholder="votre@email.com" type="email"/>
+<button class="bg-white text-energy-gradient-end px-8 py-4 rounded-xl font-bold font-label-lg text-label-lg hover:bg-surface-container-low transition-colors whitespace-nowrap">
+                            S'abonner maintenant
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+
+<footer class="bg-surface-container-highest w-full rounded-t-xl pt-stack-lg">
+  <div class="max-w-container-max mx-auto px-gutter py-stack-lg">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg">
+      <div class="md:col-span-1">
+        <div class="flex items-center gap-2 mb-6">
+          <img alt="Logo" class="h-8 w-auto" src="logo.svg"/>
+        </div>
+        <p class="text-on-surface-variant font-body-sm mb-6">Bâtir les leaders de demain à travers l'innovation, l'éducation et la solidarité panafricaine.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+          <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">forum</span></a>
+          <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">mail</span></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-label-lg mb-6 text-primary uppercase tracking-wider">Organisation</h4>
+        <ul class="space-y-4">
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="index.html#about">Notre Histoire</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="programmes.html">Nos Programmes</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="partenaires.html">Partenaires</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-lg mb-6 text-primary uppercase tracking-wider">Ressources</h4>
+        <ul class="space-y-4">
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="projets.html">Projets récents</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="evenements.html">Événements à venir</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="blog.html">Actualités & Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-lg mb-6 text-primary uppercase tracking-wider">Support</h4>
+        <ul class="space-y-4">
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="contact.html">Contactez-nous</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="don.html">Faire un don</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="inscription-sommet.html">Inscription Sommet</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-stack-lg pt-stack-sm border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Connect Jeunes — Cotonou, Bénin. Au service de la jeunesse béninoise.</p>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">
+        Made by <a href="https://rejustewenoumi.com" target="_blank" rel="noopener" class="underline hover:text-primary transition-colors">rejustewenoumi.com</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Search bar interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        if (searchInput) {
+            searchInput.addEventListener('focus', () => {
+                searchInput.classList.add('w-64');
+                searchInput.parentElement.classList.add('scale-105');
+            });
+            searchInput.addEventListener('blur', () => {
+                if(searchInput.value === "") {
+                    searchInput.classList.remove('w-64');
+                }
+                searchInput.parentElement.classList.remove('scale-105');
+            });
+        }
+    </script>
+
+<script>
+  // Sticky Header Scroll animation
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (header) {
+      if (window.scrollY > 20) {
+        header.classList.add('shadow-md', 'h-16');
+        header.classList.remove('h-20', 'shadow-sm');
+      } else {
+        header.classList.add('h-20', 'shadow-sm');
+        header.classList.remove('shadow-md', 'h-16');
+      }
+    }
+  });
+
+  // Mobile drawer menu toggle (Premium UX with body scroll lock)
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+
+  if (mobileMenuToggle && mobileMenu && menuIcon) {
+    mobileMenuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('active');
+      if (isOpen) {
+        mobileMenu.classList.remove('active');
+        menuIcon.textContent = 'menu';
+        document.body.classList.remove('overflow-hidden');
+      } else {
+        mobileMenu.classList.add('active');
+        menuIcon.textContent = 'close';
+        document.body.classList.add('overflow-hidden');
+      }
+    });
+
+    // Close menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        menuIcon.textContent = 'menu';
+        document.body.classList.remove('overflow-hidden');
+      });
+    });
+  }
+
+  // Active page detection and highlighting
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = {
+    'index.html': 'nav-home',
+    'programmes.html': 'nav-programs',
+    'projets.html': 'nav-projects',
+    'evenements.html': 'nav-events',
+    'blog.html': 'nav-blog',
+    'contact.html': 'nav-contact',
+    'galerie.html': 'nav-gallery',
+  };
+
+  const activeId = navLinks[currentPath];
+  if (activeId) {
+    const activeLink = document.getElementById(activeId);
+    if (activeLink) {
+      activeLink.classList.add('text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1');
+      activeLink.classList.remove('text-on-surface-variant');
+    }
+    const mobActiveLink = document.getElementById('mob-' + activeId);
+    if (mobActiveLink) {
+      mobActiveLink.classList.add('text-primary', 'font-bold');
+      mobActiveLink.classList.remove('text-on-surface-variant');
+    }
+  }
+
+  // Active highlighting for hash links (Notre Histoire)
+  const highlightHash = () => {
+    if (window.location.hash === '#about') {
+      const homeLink = document.getElementById('nav-home');
+      const mobHomeLink = document.getElementById('mob-nav-home');
+      if (homeLink) homeLink.classList.remove('text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1');
+      if (mobHomeLink) mobHomeLink.classList.remove('text-primary', 'font-bold');
+      
+      const aboutLink = document.getElementById('nav-about');
+      const mobAboutLink = document.getElementById('mob-nav-about');
+      if (aboutLink) {
+        aboutLink.classList.add('text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1');
+        aboutLink.classList.remove('text-on-surface-variant');
+      }
+      if (mobAboutLink) {
+        mobAboutLink.classList.add('text-primary', 'font-bold');
+        mobAboutLink.classList.remove('text-on-surface-variant');
+      }
+    }
+  };
+  window.addEventListener('hashchange', highlightHash);
+  highlightHash();
+</script>
+
+</body></html>

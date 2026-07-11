@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contactez-nous | Connect Jeunes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-tertiary-container": "#78f0e8",
+                "tertiary-container": "#006d68",
+                "tertiary-fixed-dim": "#5fd9d1",
+                "tertiary-fixed": "#7ef6ed",
+                "primary-container": "#0c63ad",
+                "on-background": "#0b1c30",
+                "error-container": "#ffdad6",
+                "surface-tint": "#0260aa",
+                "on-primary": "#ffffff",
+                "primary": "#004b87",
+                "on-primary-container": "#cadfff",
+                "surface-dim": "#cbdbf5",
+                "background": "#f8f9ff",
+                "surface-bright": "#f8f9ff",
+                "secondary": "#805600",
+                "tertiary": "#00534f",
+                "on-tertiary-fixed": "#00201e",
+                "on-tertiary": "#ffffff",
+                "on-error": "#ffffff",
+                "on-surface-variant": "#414751",
+                "surface-container-highest": "#d3e4fe",
+                "on-tertiary-fixed-variant": "#00504c",
+                "energy-gradient-start": "#f1a500",
+                "on-secondary-container": "#694600",
+                "secondary-fixed-dim": "#ffba46",
+                "error": "#ba1a1a",
+                "secondary-container": "#fdaf16",
+                "on-surface": "#0b1c30",
+                "on-primary-fixed-variant": "#004882",
+                "surface-variant": "#d3e4fe",
+                "outline": "#717782",
+                "inverse-surface": "#213145",
+                "surface-light": "#f8fafc",
+                "on-secondary-fixed-variant": "#614000",
+                "primary-fixed-dim": "#a3c9ff",
+                "surface-container-lowest": "#ffffff",
+                "outline-variant": "#c1c7d3",
+                "surface": "#f8f9ff",
+                "on-primary-fixed": "#001c38",
+                "on-secondary-fixed": "#281800",
+                "on-error-container": "#93000a",
+                "primary-fixed": "#d3e4ff",
+                "surface-container": "#e5eeff",
+                "secondary-fixed": "#ffddb0",
+                "surface-container-low": "#eff4ff",
+                "inverse-on-surface": "#eaf1ff",
+                "on-secondary": "#ffffff",
+                "energy-gradient-end": "#e94b23",
+                "surface-container-high": "#dce9ff",
+                "inverse-primary": "#a3c9ff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "1.5rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-desktop": "40px",
+                "stack-lg": "48px",
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "base": "8px",
+                "stack-md": "24px",
+                "container-max": "1280px",
+                "stack-sm": "12px"
+            },
+            "fontFamily": {
+                "display": ["Montserrat"],
+                "headline-lg": ["Montserrat"],
+                "headline-md": ["Montserrat"],
+                "headline-sm": ["Montserrat"],
+                "body-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "body-sm": ["Inter"],
+                "label-lg": ["Inter"],
+                "label-md": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .energy-gradient-bg {
+            background: linear-gradient(135deg, #f1a500 0%, #e94b23 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 30px -10px rgba(11, 28, 48, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-on-background/80 backdrop-blur-xl border-b border-white/20 dark:border-white/10 shadow-sm h-20">
+<nav class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+<div class="font-headline-sm text-headline-sm font-black text-primary dark:text-primary-fixed-dim tracking-tighter">
+                Connect Jeunes
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="#">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Programs</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Projects</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Events</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="#">News</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="#">Gallery</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-secondary font-bold font-label-lg text-label-lg" href="#">Contact Us</a>
+</div>
+<button class="energy-gradient-bg text-white px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform">
+                Donate
+            </button>
+</nav>
+</header>
+<main class="pt-32 pb-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Breadcrumb & Header -->
+<section class="mb-stack-lg">
+<nav class="flex items-center gap-2 mb-4 text-on-surface-variant font-label-md text-label-md">
+<a class="hover:text-primary" href="#">Accueil</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-semibold">Contactez-nous</span>
+</nav>
+<h1 class="font-display text-[48px] leading-[1.1] font-bold text-on-background tracking-tight mb-4">
+                Entrons en <span class="text-transparent bg-clip-text energy-gradient-bg">Contact</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Vous avez des questions sur nos programmes ou souhaitez devenir partenaire ? Notre équipe est là pour vous répondre et vous accompagner dans votre engagement.
+            </p>
+</section>
+<!-- Main Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left: Contact Info & Map -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<!-- Info Cards Bento -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-6 rounded-xl ambient-shadow hover:translate-y-[-4px] transition-all group">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Siège Social</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Palais du Peuple, Kinshasa, RDC</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl ambient-shadow hover:translate-y-[-4px] transition-all group">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">call</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Téléphone</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">+243 812 345 678<br/>+243 999 876 543</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl ambient-shadow hover:translate-y-[-4px] transition-all group">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Email</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">contact@connectjeunes.org<br/>info@connectjeunes.org</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl ambient-shadow hover:translate-y-[-4px] transition-all group">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">share</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Suivez-nous</h3>
+<div class="flex gap-3 mt-2">
+<a class="text-primary hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="text-primary hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">hub</span></a>
+<a class="text-primary hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</div>
+<!-- Visual Map Representation -->
+<div class="relative w-full aspect-video rounded-xl overflow-hidden ambient-shadow border-4 border-white">
+<div class="w-full h-full bg-surface-dim flex items-center justify-center relative overflow-hidden" data-location="Kinshasa, DRC" style="">
+<img class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" data-alt="A stylized, clean aerial map view of Kinshasa near the Palais du Peuple, designed with a modern NGO aesthetic using shades of primary blue and muted grays. A prominent orange location pin glows at the center, surrounded by clean, minimalist city grid lines. The lighting is bright and professional, creating a sense of reliability and institutional presence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBH1If-MNF3xKS4t0ri9NmrHjR_4j9_ha6oinOlCdC5Ais1626XodoWyXMVDEuHD-9XSwWiHDIlFS9Q9k5Ov_--xpOg1qetzUnlzd_BsTWWU_znl9NfDLfESQdLPxcU5WsG9Y-e2qB1T7DqpKjWcH85vV0oJp59bKoGFkXVODuGzW5Y1x4xsiM1WJt4wRjTw6i3TbGRULy-XP-yC4iLGfwNYzC7hbw9BMDoQn-fEIaxWmfQBxUKLsV"/>
+<div class="absolute inset-0 bg-primary/10"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none">
+<div class="energy-gradient-bg w-12 h-12 rounded-full flex items-center justify-center shadow-lg animate-bounce">
+<span class="material-symbols-outlined text-white">location_on</span>
+</div>
+<div class="bg-white px-4 py-2 rounded-lg mt-3 shadow-xl font-bold text-sm text-on-background">
+                                Palais du Peuple
+                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Contact Form -->
+<div class="lg:col-span-7">
+<div class="bg-white p-8 md:p-12 rounded-xl ambient-shadow border-t-4 border-secondary">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-8">Envoyez-nous un message</h2>
+<form class="space-y-6" id="contactForm">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant" for="name">Nom complet</label>
+<input class="w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" id="name" placeholder="Jean Dupont" required="" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant" for="email">Email</label>
+<input class="w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" id="email" placeholder="jean.dupont@email.com" required="" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant" for="subject">Sujet</label>
+<input class="w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" id="subject" placeholder="Devenir partenaire, Questions sur les programmes..." required="" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant" for="message">Message</label>
+<textarea class="w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-none" id="message" placeholder="Votre message ici..." required="" rows="5"></textarea>
+</div>
+<button class="w-full energy-gradient-bg text-white font-bold py-4 rounded-xl hover:opacity-90 transform active:scale-95 transition-all duration-200 flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined">send</span>
+                            Envoyer le message
+                        </button>
+</form>
+</div>
+</div>
+</div>
+<!-- FAQ Section -->
+<section class="mt-32">
+<div class="text-center mb-12">
+<h2 class="font-display text-headline-lg text-on-background mb-4">Questions Fréquentes</h2>
+<p class="text-on-surface-variant font-body-md">Trouvez rapidement des réponses aux questions les plus courantes.</p>
+</div>
+<div class="max-w-4xl mx-auto space-y-4">
+<!-- FAQ Item 1 -->
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden group">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-light transition-colors" onclick="toggleFaq(this)">
+<span class="font-headline-sm text-headline-sm text-on-background">Comment puis-je m'inscrire à un programme ?</span>
+<span class="material-symbols-outlined transform transition-transform duration-300">expand_more</span>
+</button>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md hidden">
+                        Vous pouvez vous inscrire directement via notre site web dans la section "Programmes" ou en visitant notre bureau au Palais du Peuple à Kinshasa avec une pièce d'identité valide.
+                    </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden group">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-light transition-colors" onclick="toggleFaq(this)">
+<span class="font-headline-sm text-headline-sm text-on-background">Est-ce que vos formations sont payantes ?</span>
+<span class="material-symbols-outlined transform transition-transform duration-300">expand_more</span>
+</button>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md hidden">
+                        La majorité de nos formations sont entièrement gratuites ou subventionnées par nos partenaires pour assurer l'accessibilité à tous les jeunes congolais.
+                    </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden group">
+<button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-light transition-colors" onclick="toggleFaq(this)">
+<span class="font-headline-sm text-headline-sm text-on-background">Comment faire un don à Connect Jeunes ?</span>
+<span class="material-symbols-outlined transform transition-transform duration-300">expand_more</span>
+</button>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md hidden">
+                        Vous pouvez cliquer sur le bouton "Faire un don" en haut de page ou nous contacter directement pour des dons matériels ou des partenariats à long terme.
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-surface-container-highest dark:bg-on-background mt-32">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+<div class="space-y-4">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed-dim">Connect Jeunes</div>
+<p class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm max-w-xs">
+                    © 2024 Connect Jeunes. Empowering the next generation through education, leadership, and digital innovation.
+                </p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface dark:text-surface-light uppercase tracking-wider">Quick Links</h4>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Our Programs</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Events</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface dark:text-surface-light uppercase tracking-wider">Legal</h4>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Careers</a>
+<a class="text-secondary dark:text-secondary-fixed font-semibold font-body-sm text-body-sm" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface dark:text-surface-light uppercase tracking-wider">Newsletter</h4>
+<p class="text-on-surface-variant dark:text-outline-variant font-body-sm text-body-sm">Restez informé de nos dernières activités.</p>
+<div class="flex gap-2">
+<input class="bg-white dark:bg-surface-dim rounded-lg px-4 py-2 w-full text-sm outline-none border border-outline-variant" placeholder="votre@email.com" type="email"/>
+<button class="bg-primary text-white p-2 rounded-lg hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.material-symbols-outlined');
+            
+            // Toggle visibility
+            const isHidden = content.classList.contains('hidden');
+            
+            // Close all others (optional, for accordion behavior)
+            document.querySelectorAll('.px-6.pb-6.text-on-surface-variant').forEach(el => {
+                el.classList.add('hidden');
+                el.previousElementSibling.querySelector('.material-symbols-outlined').classList.remove('rotate-180');
+            });
+
+            if (isHidden) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Simple Form Interactivity
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalContent = btn.innerHTML;
+            
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Envoi en cours...';
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Message envoyé !';
+                btn.classList.replace('energy-gradient-bg', 'bg-green-600');
+                e.target.reset();
+                
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = originalContent;
+                    btn.classList.replace('bg-green-600', 'energy-gradient-bg');
+                }, 3000);
+            }, 1500);
+        });
+
+        // Micro-interactions for info cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Subtle lift handled by CSS, could add JS effects here
+            });
+        });
+    </script>
+</body></html>

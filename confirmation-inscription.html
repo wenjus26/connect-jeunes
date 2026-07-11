@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Confirmation d'Inscription | Connect Jeunes</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#0260aa",
+                        "surface-dim": "#f1f5f9",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#dce9ff",
+                        "background": "#f8f9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#00504c",
+                        "surface-light": "#f8fafc",
+                        "energy-gradient-start": "#f1a500",
+                        "on-tertiary-container": "#78f0e8",
+                        "secondary-container": "#fdaf16",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#a3c9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001c38",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#a3c9ff",
+                        "on-secondary-fixed": "#281800",
+                        "surface-container-low": "#eff4ff",
+                        "outline-variant": "#c1c7d3",
+                        "on-primary-container": "#cadfff",
+                        "secondary-fixed-dim": "#ffba46",
+                        "tertiary-container": "#006d68",
+                        "on-error": "#ffffff",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-container": "#694600",
+                        "surface": "#f8f9ff",
+                        "tertiary": "#00534f",
+                        "secondary": "#805600",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-surface-variant": "#414751",
+                        "primary": "#004b87",
+                        "on-tertiary-fixed": "#00201e",
+                        "on-background": "#0b1c30",
+                        "outline": "#717782",
+                        "energy-gradient-end": "#e94b23",
+                        "surface-container": "#e5eeff",
+                        "tertiary-fixed": "#7ef6ed",
+                        "primary-container": "#0c63ad",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#614000",
+                        "on-primary-fixed-variant": "#004882",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "tertiary-fixed-dim": "#5fd9d1",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-fixed": "#ffddb0",
+                        "inverse-surface": "#213145",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#d3e4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "display": ["Montserrat"],
+                        "headline-sm": ["Montserrat"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .energy-gradient {
+            background: linear-gradient(135deg, #f1a500 0%, #e94b23 100%);
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
+        }
+        .kinetic-hover:hover {
+            transform: translateX(4px);
+            transition: transform 0.2s ease-in-out;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+
+<style>
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+  }
+  .energy-gradient {
+    background: linear-gradient(135deg, #f1a500 0%, #e94b23 100%) !important;
+  }
+  .btn-donate {
+    border-radius: 0px !important;
+  }
+  #mobile-menu {
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid #f1f5f9;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  #mobile-menu.active {
+    transform: translateX(0);
+  }
+  @media (min-width: 768px) {
+    #mobile-menu {
+      display: none !important;
+    }
+  }
+</style>
+
+<header class="fixed top-0 w-full z-50 glass-nav border-b border-white/20 shadow-sm h-20 transition-all duration-300">
+  <div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-full">
+    <a href="index.html" class="flex items-center gap-2">
+      <img alt="Connect Jeunes Logo" class="h-8 w-auto" src="logo.svg"/>
+    </a>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-8 items-center">
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-home" href="index.html">Accueil</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-about" href="index.html#about">Notre Histoire</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-programs" href="programmes.html">Programmes</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-projects" href="projets.html">Projets</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-events" href="evenements.html">Événements</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-blog" href="blog.html">Actualités</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-contact" href="contact.html">Contact</a>
+    </nav>
+    
+    <!-- Action Buttons & Menu Toggle -->
+    <div class="flex items-center gap-4">
+      <a href="galerie.html" class="hidden lg:flex px-6 py-2 rounded-full border-1.5 border-primary text-primary font-label-lg text-label-lg hover:bg-primary/5 transition-all" id="nav-gallery">Galerie</a>
+      <a href="don.html" class="energy-gradient text-white px-8 py-2.5 btn-donate font-label-lg text-label-lg shadow-lg hover:opacity-90 transition-opacity" id="nav-donate">Faire un Don</a>
+      
+      <!-- Hamburger Toggle Button -->
+      <button id="mobile-menu-toggle" class="md:hidden text-primary focus:outline-none flex items-center justify-center p-2 rounded-lg hover:bg-primary-container/10 transition-colors">
+        <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Premium Mobile Drawer Menu Overlay (Inspired by pcc-benin.org) -->
+  <div id="mobile-menu">
+    <div class="flex-grow flex flex-col justify-between p-6 overflow-y-auto h-full">
+      <!-- Grouped Links -->
+      <div class="space-y-6">
+        
+        <!-- Section: Découvrir -->
+        <div>
+          <h4 class="font-label-lg text-primary text-xs uppercase tracking-wider mb-2 font-bold opacity-80">Découvrir</h4>
+          <div class="grid grid-cols-2 gap-2">
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-home" href="index.html">
+              <span class="material-symbols-outlined text-sm">home</span> Accueil
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-about" href="index.html#about">
+              <span class="material-symbols-outlined text-sm">history</span> Histoire
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-partners" href="partenaires.html">
+              <span class="material-symbols-outlined text-sm">handshake</span> Partenaires
+            </a>
+          </div>
+        </div>
+
+        <!-- Section: Nos Actions -->
+        <div>
+          <h4 class="font-label-lg text-primary text-xs uppercase tracking-wider mb-2 font-bold opacity-80">Nos Actions</h4>
+          <div class="grid grid-cols-2 gap-2">
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-programs" href="programmes.html">
+              <span class="material-symbols-outlined text-sm">school</span> Programmes
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-projects" href="projets.html">
+              <span class="material-symbols-outlined text-sm">rocket_launch</span> Projets
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-gallery" href="galerie.html">
+              <span class="material-symbols-outlined text-sm">photo_library</span> Galerie
+            </a>
+          </div>
+        </div>
+
+        <!-- Section: Communauté -->
+        <div>
+          <h4 class="font-label-lg text-primary text-xs uppercase tracking-wider mb-2 font-bold opacity-80">Actualité & Événements</h4>
+          <div class="grid grid-cols-2 gap-2">
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-events" href="evenements.html">
+              <span class="material-symbols-outlined text-sm">calendar_today</span> Événements
+            </a>
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-blog" href="blog.html">
+              <span class="material-symbols-outlined text-sm">newspaper</span> Actualités
+            </a>
+          </div>
+        </div>
+
+        <!-- Section: Contact -->
+        <div>
+          <h4 class="font-label-lg text-primary text-xs uppercase tracking-wider mb-2 font-bold opacity-80">Nous Rejoindre</h4>
+          <div class="grid grid-cols-1 gap-2">
+            <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-contact" href="contact.html">
+              <span class="material-symbols-outlined text-sm">mail</span> Contactez-nous
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="mt-6 border-t border-slate-100 pt-4 space-y-4">
+        <!-- Contact details -->
+        <div class="text-[11px] text-on-surface-variant space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-xs">call</span>
+            <span>+229 97 10 63 78</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-xs">mail</span>
+            <span>info@connect-jeunes.org</span>
+          </div>
+        </div>
+
+        <!-- Social links -->
+        <div class="flex gap-3 opacity-75">
+          <a class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-xs">public</span></a>
+          <a class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-xs">forum</span></a>
+          <a class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-xs">mail</span></a>
+        </div>
+
+        <!-- Call to Action button -->
+        <a href="don.html" class="energy-gradient text-white text-center py-3 btn-donate font-label-lg shadow-lg hover:opacity-90 transition-opacity block w-full text-xs font-bold uppercase tracking-wider">Faire un Don</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="pt-32 pb-stack-lg px-gutter max-w-container-max mx-auto">
+<!-- Success Hero Section -->
+<div class="flex flex-col items-center text-center mb-stack-lg">
+<div class="w-24 h-24 rounded-full bg-secondary-container/20 flex items-center justify-center mb-6 animate-bounce">
+<span class="material-symbols-outlined text-6xl text-secondary" style="font-variation-settings: 'wght' 700;">check_circle</span>
+</div>
+<h1 class="font-display text-display mb-4">C'est confirmé !</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Merci de votre inscription. Nous avons hâte de vous retrouver pour transformer ensemble l'avenir du leadership. Un email de confirmation a été envoyé à votre adresse.
+            </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-md">
+<!-- Event Summary Card -->
+<div class="lg:col-span-7">
+<div class="bg-white rounded-2xl ambient-shadow overflow-hidden border-t-4 border-secondary">
+<div class="relative h-64 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<div class="w-full h-full" data-alt="A wide angle photograph of a high-tech modern conference hall in Cotonou, featuring vibrant blue and orange stage lighting, large digital screens displaying 'Sommet Annuel du Leadership Jeune', and an atmosphere of professional energy. The seating is arranged in a circular, collaborative fashion under a bright, clean architectural ceiling." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA94tIAYVejlQg7C4keSuRIe2hEk11wmtiCiM91otw8AxFPRLTRnW4XllpleBOzFE5_Cjvs1IqZNvqhbouskSyA8Jl18w4GkyBaboQXzD2hxsPpdLBxAEH_HFt6sADtgXBECo9r_xvXb_HBYCyigmyavj-ptgc7-1BFrIaHAzRMxWAPoYuIIh6i6j7w3ujAVQIoDMI3pkeUUL2d-MZE4uQ0fWklg-0saOvrqZykbqieKvZdCmhZnG2J')"></div>
+<div class="absolute bottom-6 left-6 z-20 text-white">
+<span class="bg-secondary px-3 py-1 rounded-full text-label-md font-label-md uppercase mb-2 inline-block">Confirmation de Présence</span>
+<h2 class="font-headline-lg text-headline-lg">Sommet Annuel du Leadership Jeune 2024</h2>
+</div>
+</div>
+<div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex items-start gap-4">
+<div class="bg-surface-container-high p-3 rounded-xl">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+</div>
+<div>
+<p class="text-label-md text-outline font-label-md uppercase">Date et Heure</p>
+<p class="font-headline-sm text-headline-sm">15 Mars, 2024</p>
+<p class="text-body-sm text-on-surface-variant">08:30 — 18:00 (GMT+1)</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-surface-container-high p-3 rounded-xl">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div>
+<p class="text-label-md text-outline font-label-md uppercase">Lieu</p>
+<p class="font-headline-sm text-headline-sm">Palais des Congrès de Cotonou</p>
+<p class="text-body-sm text-on-surface-variant">Cotonou, Bénin</p>
+</div>
+</div>
+</div>
+<div class="px-8 pb-8 flex flex-col md:flex-row gap-4 border-t border-surface-dim pt-8">
+<button class="flex-1 flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-xl font-label-lg hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">download</span> Download Ticket (PDF)
+                        </button>
+<div class="relative group flex-1">
+<button class="w-full flex items-center justify-center gap-2 bg-surface-container-high text-primary py-4 rounded-xl font-label-lg hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">calendar_add_on</span> Add to Calendar
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Next Steps & Secondary Actions -->
+<div class="lg:col-span-5 flex flex-col gap-stack-md">
+<!-- Sharing Card -->
+<div class="bg-white p-8 rounded-2xl ambient-shadow">
+<h3 class="font-headline-sm text-headline-sm mb-6">Partagez l'événement</h3>
+<p class="text-body-sm text-on-surface-variant mb-6">Faites savoir à votre réseau que vous participez au plus grand rassemblement de jeunes leaders du Bénin.</p>
+<div class="flex flex-wrap gap-4">
+<button class="w-12 h-12 rounded-full bg-surface-dim flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-dim flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-dim flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.558 0 11.894-5.335 11.897-11.893 0-3.18-1.238-6.17-3.486-8.417z"></path></svg>
+</button>
+</div>
+</div>
+<!-- Community Card -->
+<div class="bg-surface-container-low p-8 rounded-2xl border-2 border-dashed border-primary-fixed flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="bg-white p-2 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-green-600">groups</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Rejoindre la Communauté</h3>
+</div>
+<p class="text-body-sm text-on-surface-variant">Accédez à des ressources exclusives et connectez-vous avec d'autres participants via notre groupe WhatsApp officiel.</p>
+<a class="inline-flex items-center gap-2 text-primary font-label-lg kinetic-hover" href="#">
+                        Rejoindre maintenant <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Discover Programs -->
+<div class="bg-primary-container p-8 rounded-2xl text-white">
+<h3 class="font-headline-sm text-headline-sm mb-2 text-on-primary-container">Allez plus loin</h3>
+<p class="text-body-sm opacity-90 mb-6 text-on-primary-container">Découvrez nos programmes de mentorat et nos incubateurs de projets.</p>
+<a class="bg-white text-primary px-6 py-3 rounded-xl font-label-lg inline-block hover:bg-surface-dim transition-colors" href="#">
+                        Discover our Programs
+                    </a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+
+<footer class="bg-surface-container-highest w-full rounded-t-xl pt-stack-lg">
+  <div class="max-w-container-max mx-auto px-gutter py-stack-lg">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg">
+      <div class="md:col-span-1">
+        <div class="flex items-center gap-2 mb-6">
+          <img alt="Logo" class="h-8 w-auto" src="logo.svg"/>
+        </div>
+        <p class="text-on-surface-variant font-body-sm mb-6">Bâtir les leaders de demain à travers l'innovation, l'éducation et la solidarité panafricaine.</p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+          <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">forum</span></a>
+          <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">mail</span></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-label-lg mb-6 text-primary uppercase tracking-wider">Organisation</h4>
+        <ul class="space-y-4">
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="index.html#about">Notre Histoire</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="programmes.html">Nos Programmes</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="partenaires.html">Partenaires</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-lg mb-6 text-primary uppercase tracking-wider">Ressources</h4>
+        <ul class="space-y-4">
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="projets.html">Projets récents</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="evenements.html">Événements à venir</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="blog.html">Actualités & Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-lg mb-6 text-primary uppercase tracking-wider">Support</h4>
+        <ul class="space-y-4">
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="contact.html">Contactez-nous</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="don.html">Faire un don</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="inscription-sommet.html">Inscription Sommet</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-stack-lg pt-stack-sm border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Connect Jeunes — Cotonou, Bénin. Au service de la jeunesse béninoise.</p>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">
+        Made by <a href="https://rejustewenoumi.com" target="_blank" rel="noopener" class="underline hover:text-primary transition-colors">rejustewenoumi.com</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+        // Micro-interactions for sharing buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.style.transform = 'scale(0.98)';
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simple scroll effect for TopNavBar
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-lg', 'h-16');
+                header.classList.remove('h-20');
+            } else {
+                header.classList.remove('shadow-lg', 'h-16');
+                header.classList.add('h-20');
+            }
+        });
+    </script>
+
+<script>
+  // Sticky Header Scroll animation
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (header) {
+      if (window.scrollY > 20) {
+        header.classList.add('shadow-md', 'h-16');
+        header.classList.remove('h-20', 'shadow-sm');
+      } else {
+        header.classList.add('h-20', 'shadow-sm');
+        header.classList.remove('shadow-md', 'h-16');
+      }
+    }
+  });
+
+  // Mobile drawer menu toggle (Premium UX with body scroll lock)
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+
+  if (mobileMenuToggle && mobileMenu && menuIcon) {
+    mobileMenuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('active');
+      if (isOpen) {
+        mobileMenu.classList.remove('active');
+        menuIcon.textContent = 'menu';
+        document.body.classList.remove('overflow-hidden');
+      } else {
+        mobileMenu.classList.add('active');
+        menuIcon.textContent = 'close';
+        document.body.classList.add('overflow-hidden');
+      }
+    });
+
+    // Close menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        menuIcon.textContent = 'menu';
+        document.body.classList.remove('overflow-hidden');
+      });
+    });
+  }
+
+  // Active page detection and highlighting
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = {
+    'index.html': 'nav-home',
+    'programmes.html': 'nav-programs',
+    'projets.html': 'nav-projects',
+    'evenements.html': 'nav-events',
+    'blog.html': 'nav-blog',
+    'contact.html': 'nav-contact',
+    'galerie.html': 'nav-gallery',
+  };
+
+  const activeId = navLinks[currentPath];
+  if (activeId) {
+    const activeLink = document.getElementById(activeId);
+    if (activeLink) {
+      activeLink.classList.add('text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1');
+      activeLink.classList.remove('text-on-surface-variant');
+    }
+    const mobActiveLink = document.getElementById('mob-' + activeId);
+    if (mobActiveLink) {
+      mobActiveLink.classList.add('text-primary', 'font-bold');
+      mobActiveLink.classList.remove('text-on-surface-variant');
+    }
+  }
+
+  // Active highlighting for hash links (Notre Histoire)
+  const highlightHash = () => {
+    if (window.location.hash === '#about') {
+      const homeLink = document.getElementById('nav-home');
+      const mobHomeLink = document.getElementById('mob-nav-home');
+      if (homeLink) homeLink.classList.remove('text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1');
+      if (mobHomeLink) mobHomeLink.classList.remove('text-primary', 'font-bold');
+      
+      const aboutLink = document.getElementById('nav-about');
+      const mobAboutLink = document.getElementById('mob-nav-about');
+      if (aboutLink) {
+        aboutLink.classList.add('text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1');
+        aboutLink.classList.remove('text-on-surface-variant');
+      }
+      if (mobAboutLink) {
+        mobAboutLink.classList.add('text-primary', 'font-bold');
+        mobAboutLink.classList.remove('text-on-surface-variant');
+      }
+    }
+  };
+  window.addEventListener('hashchange', highlightHash);
+  highlightHash();
+</script>
+
+</body></html>
