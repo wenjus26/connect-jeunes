@@ -17,7 +17,7 @@ class MemberForm(forms.ModelForm):
         fields = [
             'civility', 'email', 'phone', 'birth_date', 'profession',
             'country', 'department', 'commune', 'arrondissement',
-            'neighborhood', 'recommende_par',
+            'neighborhood',
             'nip', 'consent'
         ]
         widgets = {
@@ -58,9 +58,6 @@ class MemberForm(forms.ModelForm):
             'neighborhood': forms.Select(attrs={
                 'class': 'w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input',
                 'id': 'id_neighborhood'
-            }),
-            'recommende_par': forms.Select(attrs={
-                'class': 'w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input'
             }),
             'nip': forms.TextInput(attrs={
                 'class': 'w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input',

@@ -163,13 +163,6 @@
                   <p class="text-red-500 text-xs">{{ form.country.errors.as_text }}</p>
                 {% endif %}
               </div>
-              <div class="space-y-2 md:col-span-2">
-                <label class="font-label-lg text-label-lg text-on-surface-variant block">Qui vous a affilié ou parlé de Connect Jeunes ? (Laisser vide si aucun)</label>
-                {{ form.recommende_par }}
-                {% if form.recommende_par.errors %}
-                  <p class="text-red-500 text-xs">{{ form.recommende_par.errors.as_text }}</p>
-                {% endif %}
-              </div>
             </div>
           </div>
 
