@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Nos Partenaires - Connect Jeunes{% endblock %}
+
+{% block content %}
+<section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQ9Y_DyC4tx7NGVY4VRMNfcahfx9Ezdx2bRrh9AjCnUdztahWXgN2zBAU3C8GhBaaI3u9F8CN88N9WqAh7xvxaERAiNu73mPNO5BrWYbNdgsT8TxBlbTkf-C5SmphnU2hhRcwUE2xtPI2rDGzCXtqLPSdmyjM61rNoXOG_RtEqU5hog1pFqjWp79eNMjx5jL9C8bX9TlfKJAQ2NyuL7l7wIf1gYqKJml6QGwdcZaldeSL9PDz4J1Y8')"></div>
+    <div class="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+  </div>
+  <div class="relative z-10 text-center px-gutter max-w-4xl">
+    <h1 class="font-display text-display text-white mb-stack-md drop-shadow-lg">
+      Nos Partenaires de Changement
+    </h1>
+    <p class="font-body-lg text-body-lg text-white/90 max-w-2xl mx-auto drop-shadow-md">
+      Ensemble, nous construisons des ponts vers un avenir durable pour la jeunesse. Découvrez les organisations qui soutiennent notre mission à travers le monde.
+    </p>
+  </div>
+</section>
+
+<!-- Partnership Categories -->
+<section class="py-stack-lg max-w-container-max mx-auto px-gutter">
+  <div class="flex flex-col items-center mb-stack-lg text-center">
+    <span class="font-label-lg text-label-lg text-secondary uppercase tracking-widest mb-stack-sm">Écosystème</span>
+    <h2 class="font-headline-lg text-headline-lg text-primary">Ils soutiennent notre action au Bénin</h2>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {% for partenaire in partenaires %}
+      <!-- Partner Card -->
+      <div class="bg-surface-container-low rounded-xl p-6 text-center shadow-sm border border-outline-variant/30 flex flex-col justify-between group hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+        <div class="flex flex-col items-center">
+          <div class="w-20 h-20 flex items-center justify-center mb-4">
+            {% if partenaire.logo %}
+              <img src="{{ partenaire.logo.url }}" alt="Logo {{ partenaire.nom_entite }}" class="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-105"/>
+            {% else %}
+              <span class="material-symbols-outlined text-primary text-5xl">handshake</span>
+            {% endif %}
+          </div>
+          <h3 class="font-headline-sm text-headline-sm mb-2 text-primary">{{ partenaire.sigle|default:partenaire.nom_entite }}</h3>
+          <p class="text-body-sm text-on-surface-variant mb-2">{{ partenaire.nom_entite }}</p>
+          <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 mb-2">{{ partenaire.get_type_entite_display }}</span>
+        </div>
+        <div class="border-t border-slate-100 pt-4 mt-4 text-xs text-on-surface-variant text-left space-y-2">
+          <p><strong>Domaine :</strong> {{ partenaire.domaine_action }}</p>
+          <p><strong>Zone :</strong> {{ partenaire.zone_geographique }}</p>
+        </div>
+      </div>
+    {% empty %}
+      <!-- Fallback static cards -->
+      <div class="bg-surface-container-low rounded-xl p-6 text-center shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+        <div class="flex flex-col items-center">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4">account_balance</span>
+          <h3 class="font-headline-sm text-headline-sm mb-2 text-primary">AFD</h3>
+          <p class="text-body-sm text-on-surface-variant">Agence Française de Développement</p>
+        </div>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-6 text-center shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+        <div class="flex flex-col items-center">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4">agriculture</span>
+          <h3 class="font-headline-sm text-headline-sm mb-2 text-primary">PADAC</h3>
+          <p class="text-body-sm text-on-surface-variant">Projet d'Appui au Développement de l'Agriculture et des Collines</p>
+        </div>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-6 text-center shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+        <div class="flex flex-col items-center">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4">diversity_3</span>
+          <h3 class="font-headline-sm text-headline-sm mb-2 text-primary">Groupement IFE DON</h3>
+          <p class="text-body-sm text-on-surface-variant">Coopérative de transformatrices d'arachides à Savè</p>
+        </div>
+      </div>
+      <div class="bg-surface-container-low rounded-xl p-6 text-center shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+        <div class="flex flex-col items-center">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4">domain</span>
+          <h3 class="font-headline-sm text-headline-sm mb-2 text-primary">GDIZ</h3>
+          <p class="text-body-sm text-on-surface-variant">Zone Industrielle de Glo-Djigbé (Orientation professionnelle)</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Why Partner with Us -->
+<section class="py-stack-lg bg-surface-container-highest">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+      <div>
+        <h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md">Pourquoi Devenir Partenaire ?</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">
+          Nous croyons que la collaboration est le catalyseur de l'innovation sociale. En rejoignant Connect Jeunes, vous accédez à un levier d'action unique.
+        </p>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+              <span class="material-symbols-outlined">hub</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-body-md text-on-surface mb-1">Réseau d'Impact</h4>
+              <p class="text-body-sm text-on-surface-variant">Intégrez un écosystème d'acteurs engagés (institutions, entreprises, associations) au service de la jeunesse.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+              <span class="material-symbols-outlined">ads_click</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-body-md text-on-surface mb-1">Actions Concrètes</h4>
+              <p class="text-body-sm text-on-surface-variant">Participez au financement et au mentorat d'initiatives à fort impact social et économique.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Side Callout -->
+      <div class="bg-white rounded-2xl p-10 border border-outline-variant/30 ambient-shadow">
+        <h3 class="font-headline-sm text-headline-sm mb-4">Co-construisons un projet</h3>
+        <p class="text-body-sm text-on-surface-variant mb-6">
+          Vous souhaitez associer votre organisation à notre démarche ? Remplissez notre formulaire de contact ou écrivez-nous directement pour convenir d'un rendez-vous.
+        </p>
+        <a href="{% url 'contact' %}" class="energy-gradient text-white text-center py-4 rounded-xl font-label-lg shadow-lg hover:opacity-90 transition-opacity block w-full">Nous Contacter</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

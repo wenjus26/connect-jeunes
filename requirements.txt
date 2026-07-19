@@ -1,0 +1,6 @@
+django-phonenumber-field
+phonenumbers
+django-countries
+django-cleanup
+django-summernote
+pillow

@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Confirmation d'Inscription - Connect Jeunes{% endblock %}
+
+{% block content %}
+<main class="pt-32 pb-stack-lg px-gutter max-w-container-max mx-auto">
+  <!-- Success Hero Section -->
+  <div class="flex flex-col items-center text-center mb-stack-lg">
+    <div class="w-24 h-24 rounded-full bg-secondary-container/20 flex items-center justify-center mb-6 animate-bounce">
+      <span class="material-symbols-outlined text-6xl text-secondary" style="font-variation-settings: 'wght' 700;">check_circle</span>
+    </div>
+    <h1 class="font-display text-display mb-4">C'est confirmé !</h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+      Merci de votre adhésion, <strong>{{ nom_complet }}</strong>. Nous avons hâte de vous retrouver au sein de notre communauté. Votre code d'accès unique a bien été généré ci-dessous.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-md">
+    <!-- Event Summary Card / Ticket -->
+    <div class="lg:col-span-7" id="member-ticket">
+      <div class="bg-white rounded-2xl ambient-shadow overflow-hidden border-t-4 border-secondary p-8 space-y-6">
+        <div class="flex justify-between items-center border-b border-surface-dim pb-4">
+          <div>
+            <span class="bg-secondary px-3 py-1 rounded-full text-white text-xs font-semibold uppercase mb-2 inline-block">Billet de Membre Officiel</span>
+            <h2 class="font-headline-lg text-2xl text-primary">{{ nom_complet }}</h2>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-outline block">ID UNIQUE</span>
+            <span class="font-mono font-bold text-sm bg-slate-100 px-3 py-1 rounded border">{{ barcode_id }}</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 py-4">
+          <div class="flex items-start gap-4">
+            <div class="bg-surface-container-high p-3 rounded-xl">
+              <span class="material-symbols-outlined text-primary">person</span>
+            </div>
+            <div>
+              <p class="text-label-md text-outline font-label-md uppercase">Type d'adhésion</p>
+              <p class="font-headline-sm text-lg font-bold">Membre Actif</p>
+              <p class="text-body-sm text-on-surface-variant">Connect Jeunes Bénin</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="bg-surface-container-high p-3 rounded-xl">
+              <span class="material-symbols-outlined text-primary">call</span>
+            </div>
+            <div>
+              <p class="text-label-md text-outline font-label-md uppercase">Téléphone</p>
+              <p class="font-headline-sm text-lg font-bold">{{ telephone }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center bg-slate-50 p-6 rounded-xl border border-dashed border-outline-variant/30 space-y-4">
+          <!-- Text Barcode mockup -->
+          <div class="font-mono text-xs text-slate-400 select-none tracking-[6px] text-center">
+            ||||| | ||||| | || | |||| || | || ||||
+            <span class="block tracking-normal font-bold text-slate-600 mt-2">{{ barcode_id }}</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 pt-4">
+          <button class="flex-1 flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-xl font-label-lg hover:opacity-90 transition-opacity" onclick="window.print()">
+            <span class="material-symbols-outlined">print</span> Imprimer mon Billet
+          </button>
+          <div class="relative group flex-1">
+            <button class="w-full flex items-center justify-center gap-2 bg-surface-container-high text-primary py-4 rounded-xl font-label-lg hover:bg-surface-container-highest transition-colors" onclick="alert('Ajouté au calendrier de Connect Jeunes !')">
+              <span class="material-symbols-outlined">calendar_add_on</span> Ajouter au Calendrier
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next Steps & Secondary Actions -->
+    <div class="lg:col-span-5 flex flex-col gap-stack-md">
+      <!-- Sharing Card -->
+      <div class="bg-white p-8 rounded-2xl ambient-shadow">
+        <h3 class="font-headline-sm text-headline-sm mb-6">Partagez l'événement</h3>
+        <p class="text-body-sm text-on-surface-variant mb-6">Faites savoir à votre réseau que vous participez au mouvement et contribuez au développement de la jeunesse béninoise.</p>
+        <div class="flex gap-4">
+          <button class="w-12 h-12 rounded-full bg-surface-dim flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300" onclick="alert('Partagé sur les réseaux !')">
+            <span class="material-symbols-outlined">share</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Community Card -->
+      <div class="bg-surface-container-low p-8 rounded-2xl border-2 border-dashed border-primary-fixed flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <div class="bg-white p-2 rounded-lg shadow-sm">
+            <span class="material-symbols-outlined text-green-600">groups</span>
+          </div>
+          <h3 class="font-headline-sm text-headline-sm">Rejoindre la Communauté</h3>
+        </div>
+        <p class="text-body-sm text-on-surface-variant">Accédez à des ressources exclusives et connectez-vous avec d'autres participants via notre groupe WhatsApp officiel.</p>
+        <a class="inline-flex items-center gap-2 text-primary font-label-lg hover:underline" href="https://chat.whatsapp.com/example" target="_blank">
+          Rejoindre maintenant <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Discover Programs -->
+      <div class="bg-primary-container p-8 rounded-2xl text-on-primary-container">
+        <h3 class="font-headline-sm text-headline-sm mb-2 text-on-primary-container">Allez plus loin</h3>
+        <p class="text-body-sm opacity-90 mb-6 text-on-primary-container">Découvrez nos programmes de mentorat et nos incubateurs de projets.</p>
+        <a class="bg-white text-primary px-6 py-3 rounded-xl font-label-lg inline-block hover:bg-surface-dim transition-colors" href="{% url 'programmes' %}">
+          Découvrir nos Programmes
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block newsletter_cta %}
+<!-- No newsletter block on success page -->
+{% endblock %}

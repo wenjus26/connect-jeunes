@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Actualités & Blog - Connect Jeunes{% endblock %}
+
+{% block content %}
+<!-- Featured Article Banner -->
+{% with featured_article=articles.0 %}
+{% if featured_article %}
+<section class="relative h-[600px] flex items-center overflow-hidden">
+  <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('{% if featured_article.image_principale %}{{ featured_article.image_principale.url }}{% else %}https://lh3.googleusercontent.com/aida-public/AB6AXuBkjhuyYJbe9Dvww7OlpeGcSU6-6JeQn3NGmSav8BVs9AaGYDKSGmdmvy-dae2Z0xy9V3JofcfchJ1d7oKvSLgnsJEq742BA9R6kXUCdxLz3mGv44bAafuKeYa7KfwLR49xpau8lnbEF5cle6CgzdamS6fqsZP_8jXpTgOkzJxLZelOL_PBTzWjlKYjzNzwdP3sM2OjiU5aZDq-T29p5oJsGGDzjNCiZfdo6MbGXJP2TZP1A_Ppw8Y7{% endif %}')"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-on-background/90 via-on-background/40 to-transparent z-10"></div>
+  <div class="relative z-20 px-gutter max-w-container-max mx-auto w-full">
+    <div class="max-w-2xl text-white">
+      <span class="inline-block px-3 py-1 energy-gradient rounded-md font-label-md text-label-md mb-4 uppercase tracking-wider">À la une</span>
+      <h1 class="font-display text-display mb-6">{{ featured_article.titre }}</h1>
+      <p class="font-body-lg text-body-lg mb-8 text-surface-container-low">{{ featured_article.description_courte }}</p>
+      <a href="{% url 'article_detail' uuid=featured_article.uuid %}" class="bg-primary text-white px-8 py-4 rounded-xl font-headline-sm text-headline-sm hover:bg-primary-container transition-all flex items-center justify-center gap-2 group w-fit">
+          En savoir plus
+          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endwith %}
+
+<!-- Search & Filter Bar -->
+<section class="py-stack-md bg-surface-container-low border-y border-outline-variant/20">
+  <div class="px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <div class="flex flex-wrap gap-2">
+      <button class="px-4 py-2 rounded-full bg-primary text-white font-label-lg text-label-lg">Tout voir</button>
+      <button class="px-4 py-2 rounded-full bg-white text-on-surface-variant hover:bg-surface-variant transition-colors font-label-lg text-label-lg">Impact Stories</button>
+      <button class="px-4 py-2 rounded-full bg-white text-on-surface-variant hover:bg-surface-variant transition-colors font-label-lg text-label-lg">Organization News</button>
+      <button class="px-4 py-2 rounded-full bg-white text-on-surface-variant hover:bg-surface-variant transition-colors font-label-lg text-label-lg">Innovations</button>
+    </div>
+    <div class="relative w-full md:w-auto">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">filter_list</span>
+      <select class="pl-10 pr-8 py-2 bg-white border-outline-variant rounded-lg font-label-lg text-label-lg focus:ring-primary min-w-[200px] appearance-none">
+        <option>Plus récents</option>
+        <option>Plus anciens</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<!-- News Grid -->
+<section class="py-stack-lg px-gutter max-w-container-max mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {% for article in articles %}
+      {% if not forloop.first or articles|length < 2 %}
+        <!-- Article Card -->
+        <article class="bg-white rounded-xl overflow-hidden ambient-shadow group hover:-translate-y-2 transition-transform duration-300">
+          <div class="h-56 relative overflow-hidden">
+            {% if article.image_principale %}
+              <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="{{ article.titre }}" src="{{ article.image_principale.url }}"/>
+            {% else %}
+              <div class="w-full h-full bg-slate-200 flex items-center justify-center">
+                <span class="material-symbols-outlined text-4xl text-slate-400">image</span>
+              </div>
+            {% endif %}
+            <span class="absolute top-4 left-4 bg-tertiary-container text-tertiary-fixed px-3 py-1 rounded-full font-label-md text-label-md">Blog</span>
+          </div>
+          <div class="p-6">
+            <div class="text-outline font-label-md text-label-md mb-2 flex items-center gap-2">
+              <span class="material-symbols-outlined text-[14px]">calendar_today</span> {{ article.date_publication|date:"d M Y" }}
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-3 line-clamp-2">{{ article.titre }}</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-3">{{ article.description_courte }}</p>
+            <div class="text-on-surface-variant text-xs mb-4">Par {{ article.auteur }}</div>
+            <a class="text-primary font-label-lg text-label-lg font-bold flex items-center gap-1 hover:gap-3 transition-all" href="{% url 'article_detail' uuid=article.uuid %}">
+                Lire l'article <span class="material-symbols-outlined">chevron_right</span>
+            </a>
+          </div>
+        </article>
+      {% endif %}
+    {% empty %}
+      <p class="text-center col-span-3 text-on-surface-variant italic py-10">Aucun article publié pour le moment.</p>
+    {% endfor %}
+  </div>
+  
+  <div class="mt-12 flex justify-center">
+    <button class="border-2 border-primary text-primary px-8 py-3 rounded-xl font-label-lg text-label-lg font-bold hover:bg-primary hover:text-white transition-all">
+        Charger plus d'articles
+    </button>
+  </div>
+</section>
+{% endblock %}

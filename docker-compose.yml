@@ -1,0 +1,20 @@
+services:
+  web:
+    build: .
+    container_name: connect_jeunes_web
+    restart: always
+    ports:
+      - "127.0.0.1:8030:8030" # accessible uniquement en local sur le VPS
+    env_file:
+      - .env
+    environment:
+      DB_HOST: mysql_server # nom du conteneur central mysql
+    volumes:
+      - ./staticfiles:/app/staticfiles
+      - ./media:/app/media
+    networks:
+      - shared_db_network
+
+networks:
+  shared_db_network:
+    external: true

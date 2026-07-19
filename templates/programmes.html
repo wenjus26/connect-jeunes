@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Nos Programmes - Connect Jeunes{% endblock %}
+
+{% block content %}
+<main class="pt-32 pb-stack-lg">
+  <!-- Hero Section -->
+  <section class="max-w-container-max mx-auto px-gutter mb-stack-lg">
+    <div class="relative rounded-3xl overflow-hidden min-h-[40vh] p-8 md:p-16 flex items-center">
+      <div class="absolute inset-0 z-0">
+        <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1Hf4F0oycYEQHCW34FRvqk7OZMEPkyOjU4Z2JBkCEiFX-PfijPo9coaIIuIYDOBARiYLNwpl7uAolkUei3qSpLvIH12wjeZpL8e0X77mf4xPkQebm5P6I0wzFOC79-lfN5SzCuvmO7gXc__f5vjH95VLhnTVuagHVpyZ6EDmkOJi4B4mBPj73Ha_WTB6ZA-7vjtk7cFqRE4sYfTr7nl78drc2XrP_cgZ5kKuxB2W75z3ExVJyeBHJ')"></div>
+        <div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px]"></div>
+      </div>
+      <div class="relative z-10 max-w-2xl text-white">
+        <h1 class="font-display text-display mb-stack-sm leading-tight">Développer la Jeunesse par l'Innovation</h1>
+        <p class="font-body-lg text-body-lg text-white/90 mb-stack-md max-w-xl">
+          Nos programmes sont conçus pour réduire les écarts d'opportunités, en dotant la nouvelle génération des compétences et de la confiance nécessaires pour diriger.
+        </p>
+        <div class="flex gap-4">
+          <a class="energy-gradient px-8 py-3 rounded-full font-label-lg text-label-lg shadow-xl hover:scale-105 transition-transform" href="#all-programs">Découvrir nos programmes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Grid Section -->
+  <section class="max-w-container-max mx-auto px-gutter" id="all-programs">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-stack-lg gap-gutter">
+      <div>
+        <span class="text-primary font-label-lg text-label-lg uppercase tracking-widest mb-2 block">Nos Domaines d'Intervention</span>
+        <h2 class="font-headline-lg text-headline-lg text-on-surface">Nos Piliers d'Action</h2>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+        Des initiatives ciblées axées sur le renforcement des capacités, la maîtrise des technologies, l'orientation et le leadership citoyen.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+      {% for pilier in piliers %}
+        <!-- Card -->
+        <div class="bg-surface-container-lowest p-stack-md rounded-xl ambient-shadow hover-card transition-all duration-300 border-t-4 {% cycle 'border-energy-gradient-start' 'border-primary' 'border-energy-gradient-end' 'border-secondary' 'border-tertiary' %} flex flex-col h-full justify-between">
+          <div>
+            <div class="w-14 h-14 bg-surface-container rounded-lg flex items-center justify-center text-primary mb-stack-md">
+              <span class="material-symbols-outlined text-4xl">{{ pilier.icone }}</span>
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface mb-stack-sm">{{ pilier.titre }}</h3>
+            <div class="font-body-sm text-body-sm text-on-surface-variant mb-auto pb-stack-md">
+              {{ pilier.description|safe }}
+            </div>
+          </div>
+          <span class="text-xs font-bold text-primary italic mt-4 block">"Connecte-toi !"</span>
+        </div>
+      {% empty %}
+        <!-- Fallback static cards -->
+        <div class="bg-surface-container-lowest p-stack-md rounded-xl ambient-shadow hover-card transition-all duration-300 border-t-4 border-energy-gradient-start flex flex-col h-full">
+          <div class="w-14 h-14 bg-surface-container rounded-lg flex items-center justify-center text-primary mb-stack-md">
+            <span class="material-symbols-outlined text-4xl">school</span>
+          </div>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface mb-stack-sm">Éducation &amp; Numérique</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mb-auto pb-stack-md">
+            Formations aux compétences numériques, aux soft skills et à la citoyenneté active.
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Dynamic Impact Section -->
+  <section class="mt-stack-lg bg-surface-container py-stack-lg">
+    <div class="max-w-container-max mx-auto px-gutter">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center">
+        <div>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-md">Un Impact Concret sur le Terrain</h2>
+          <div class="space-y-stack-sm">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full energy-gradient flex items-center justify-center text-white font-bold">500+</div>
+              <p class="font-body-md text-body-md">Jeunes formés et accompagnés dans le cadre de nos activités</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold">150+</div>
+              <p class="font-body-md text-body-md">Jeunes de Savè orientés via des visites industrielles guidées</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-tertiary flex items-center justify-center text-white font-bold">5</div>
+              <p class="font-body-md text-body-md">Domaines stratégiques d'intervention pour un impact durable</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-xl overflow-hidden h-48 ambient-shadow">
+            <img class="w-full h-full object-cover" alt="Student on laptop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtDK2uk5-UR2elkEtSSXPvFwmWrGvNEWCrU0278ysJZVdOz3dXbFmZpqhGWeRrycYTif6gPalO-NASN8f0Ogqi-YQVrvSPu9sSV4-6wVCHUslh3YT0pu8s5WFkeVgMbTam_2HX2lWp0OB8n_DGyCfx0TpcdQUZtpxOFgS6pS2ej0M4SNmPjKZZ4tma16zklIa0DjepEJTi9_PDrbrNBCEGhb48-cPU58X0GNojdoD9pNgleeEJWIHd"/>
+          </div>
+          <div class="rounded-xl overflow-hidden h-48 ambient-shadow mt-stack-md">
+            <img class="w-full h-full object-cover" alt="Workshop sticky notes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC17j62eqSM8MKKLpsVU8TYjcx3Y9RGuVo0RHYLAAg1MxKvCKtyn1Y5xsC2ZIhverkg82y-pqfmRvrxt7G7rHfuZkkE4uiI1jqmDiGb-62pbH6xIUXmPgrwbUxtRREP00KAIILaB1xViLwkm42hXZwRYX5Vc7XST9R1gSLJhDOby8OAnCwdMbgD4_izu67TOUe-ye-DAVDeetle-UA8aAn5g7LvJNkiYI7S-PfMmPe2GAl9upS8gwKv"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

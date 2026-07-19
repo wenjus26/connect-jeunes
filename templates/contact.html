@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contactez-nous - Connect Jeunes{% endblock %}
+
+{% block content %}
+<main class="pt-32 pb-stack-lg px-gutter max-w-container-max mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <!-- Left: Info & Map -->
+    <div class="lg:col-span-5 space-y-8">
+      <div class="space-y-4">
+        <span class="text-primary font-label-lg text-label-lg uppercase tracking-widest block">Restons en contact</span>
+        <h1 class="font-display text-display text-on-surface text-3xl">Nous serions ravis d'échanger avec vous</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Que vous souhaitiez devenir bénévole, proposer un partenariat ou simplement poser des questions sur nos activités, notre équipe vous répondra dans les meilleurs délais.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-surface-container-low p-6 rounded-xl ambient-shadow hover:translate-y-[-4px] transition-all group">
+          <div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined">location_on</span>
+          </div>
+          <h3 class="font-headline-sm text-headline-sm mb-2">Bureaux</h3>
+          <p class="text-on-surface-variant font-body-sm text-body-sm">Cotonou &amp; Savè, Bénin</p>
+        </div>
+        <div class="bg-surface-container-low p-6 rounded-xl ambient-shadow hover:translate-y-[-4px] transition-all group">
+          <div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined">call</span>
+          </div>
+          <h3 class="font-headline-sm text-headline-sm mb-2">Téléphone</h3>
+          <p class="text-on-surface-variant font-body-sm text-body-sm">+229 01 46 17 16 60</p>
+        </div>
+        <div class="bg-surface-container-low p-6 rounded-xl ambient-shadow hover:translate-y-[-4px] transition-all group">
+          <div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined">mail</span>
+          </div>
+          <h3 class="font-headline-sm text-headline-sm mb-2">Email</h3>
+          <p class="text-on-surface-variant font-body-sm text-body-sm">connectjeunes1@gmail.com</p>
+        </div>
+        <div class="bg-surface-container-low p-6 rounded-xl ambient-shadow hover:translate-y-[-4px] transition-all group">
+          <div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined">share</span>
+          </div>
+          <h3 class="font-headline-sm text-headline-sm mb-2">Suivez-nous</h3>
+          <div class="flex gap-4 mt-2">
+            <a class="text-primary hover:text-secondary transition-colors" href="https://www.facebook.com/connectjeune"><span class="material-symbols-outlined text-xs">public</span></a>
+            <a class="text-primary hover:text-secondary transition-colors" href="https://www.linkedin.com/company/connectjeune"><span class="material-symbols-outlined text-xs">forum</span></a>
+            <a class="text-primary hover:text-secondary transition-colors" href="mailto:connectjeunes1@gmail.com"><span class="material-symbols-outlined text-xs">mail</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="relative w-full aspect-video rounded-xl overflow-hidden ambient-shadow border-4 border-white">
+        <div class="w-full h-full bg-surface-dim flex items-center justify-center relative overflow-hidden">
+          <img class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" alt="Cotonou Map" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBH1If-MNF3xKS4t0ri9NmrHjR_4j9_ha6oinOlCdC5Ais1626XodoWyXMVDEuHD-9XSwWiHDIlFS9Q9k5Ov_--xpOg1qetzUnlzd_BsTWWU_znl9NfDLfESQdLPxcU5WsG9Y-e2qB1T7DqpKjWcH85vV0oJp59bKoGFkXVODuGzW5Y1x4xsiM1WJt4wRjTw6i3TbGRULy-XP-yC4iLGfwNYzC7hbw9BMDoQn-fEIaxWmfQBxUKLsV"/>
+          <div class="absolute inset-0 bg-primary/10"></div>
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none">
+            <div class="energy-gradient w-12 h-12 rounded-full flex items-center justify-center shadow-lg animate-bounce">
+              <span class="material-symbols-outlined text-white">location_on</span>
+            </div>
+            <div class="bg-white px-4 py-2 rounded-lg mt-3 shadow-xl font-bold text-sm text-on-background">
+              Palais des Congrès de Cotonou
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div class="lg:col-span-7">
+      <div class="bg-white p-8 md:p-12 rounded-xl ambient-shadow border-t-4 border-secondary">
+        <h2 class="font-headline-lg text-headline-lg text-on-background mb-8">Envoyez-nous un message</h2>
+        
+        <form class="space-y-6" id="contactForm" method="POST" action="{% url 'contact' %}">
+          {% csrf_token %}
+          
+          {% if messages %}
+            {% for message in messages %}
+              <div class="p-4 mb-4 text-sm text-green-800 bg-green-100 rounded-lg border border-green-200" role="alert">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+          
+          <div id="ajaxAlert" class="p-4 mb-4 text-sm rounded-lg border hidden" role="alert"></div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="font-label-lg text-label-lg text-on-surface-variant">Nom complet</label>
+              {{ form.nom }}
+              {% if form.nom.errors %}
+                <p class="text-red-500 text-xs mt-1">{{ form.nom.errors.as_text }}</p>
+              {% endif %}
+            </div>
+            <div class="space-y-2">
+              <label class="font-label-lg text-label-lg text-on-surface-variant">Email</label>
+              {{ form.email }}
+              {% if form.email.errors %}
+                <p class="text-red-500 text-xs mt-1">{{ form.email.errors.as_text }}</p>
+              {% endif %}
+            </div>
+          </div>
+          
+          <div class="space-y-2">
+            <label class="font-label-lg text-label-lg text-on-surface-variant">Sujet</label>
+            {{ form.sujet }}
+            {% if form.sujet.errors %}
+              <p class="text-red-500 text-xs mt-1">{{ form.sujet.errors.as_text }}</p>
+            {% endif %}
+          </div>
+          
+          <div class="space-y-2">
+            <label class="font-label-lg text-label-lg text-on-surface-variant">Message</label>
+            {{ form.message }}
+            {% if form.message.errors %}
+              <p class="text-red-500 text-xs mt-1">{{ form.message.errors.as_text }}</p>
+            {% endif %}
+          </div>
+          
+          <button class="w-full energy-gradient text-white font-bold py-4 rounded-xl hover:opacity-90 transform active:scale-95 transition-all duration-200 flex items-center justify-center gap-2" type="submit">
+            <span class="material-symbols-outlined">send</span>
+            Envoyer le message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <section class="mt-32">
+    <div class="text-center mb-12">
+      <h2 class="font-display text-headline-lg text-on-background mb-4">Questions Fréquentes</h2>
+      <p class="text-on-surface-variant font-body-md">Trouvez rapidement des réponses aux questions les plus courantes.</p>
+    </div>
+    <div class="max-w-4xl mx-auto space-y-4">
+      <!-- FAQ Item 1 -->
+      <div class="bg-white rounded-xl border border-outline-variant overflow-hidden group">
+        <button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-light transition-colors" onclick="toggleFaq(this)">
+          <span class="font-headline-sm text-headline-sm text-on-background">Comment puis-je m'inscrire à un programme ?</span>
+          <span class="material-symbols-outlined transform transition-transform duration-300">expand_more</span>
+        </button>
+        <div class="px-6 pb-6 text-on-surface-variant font-body-md hidden">
+          Vous pouvez vous inscrire directement via notre site web dans la section "Programmes" ou en visitant notre bureau à Cotonou avec une pièce d'identité valide.
+        </div>
+      </div>
+      <!-- FAQ Item 2 -->
+      <div class="bg-white rounded-xl border border-outline-variant overflow-hidden group">
+        <button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-light transition-colors" onclick="toggleFaq(this)">
+          <span class="font-headline-sm text-headline-sm text-on-background">Est-ce que vos formations sont payantes ?</span>
+          <span class="material-symbols-outlined transform transition-transform duration-300">expand_more</span>
+        </button>
+        <div class="px-6 pb-6 text-on-surface-variant font-body-md hidden">
+          La majorité de nos formations sont entièrement gratuites ou subventionnées par nos partenaires pour assurer l'accessibilité à tous les jeunes béninois.
+        </div>
+      </div>
+      <!-- FAQ Item 3 -->
+      <div class="bg-white rounded-xl border border-outline-variant overflow-hidden group">
+        <button class="w-full flex items-center justify-between p-6 text-left hover:bg-surface-light transition-colors" onclick="toggleFaq(this)">
+          <span class="font-headline-sm text-headline-sm text-on-background">Comment faire un don à Connect Jeunes ?</span>
+          <span class="material-symbols-outlined transform transition-transform duration-300">expand_more</span>
+        </button>
+        <div class="px-6 pb-6 text-on-surface-variant font-body-md hidden">
+          Vous pouvez cliquer sur le bouton "Faire un don" en haut de page ou nous contacter directement pour des dons matériels ou des partenariats à long terme.
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  function toggleFaq(button) {
+    const answer = button.nextElementSibling;
+    const icon = button.querySelector('.material-symbols-outlined');
+    const isHidden = answer.classList.contains('hidden');
+    
+    if (isHidden) {
+      answer.classList.remove('hidden');
+      icon.style.transform = 'rotate(180deg)';
+    } else {
+      answer.classList.add('hidden');
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+
+  // Handle Ajax Form Submission for Contact
+  const contactForm = document.getElementById('contactForm');
+  const alertBox = document.getElementById('ajaxAlert');
+
+  if (contactForm && alertBox) {
+    contactForm.addEventListener('submit', (e) => {
+      // Check if we want to submit via ajax
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        alertBox.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'border-green-200', 'bg-red-100', 'text-red-800', 'border-red-200');
+        if (data.status === 'success') {
+          alertBox.textContent = data.message;
+          alertBox.classList.add('bg-green-100', 'text-green-800', 'border-green-200');
+          contactForm.reset();
+        } else {
+          alertBox.textContent = "Veuillez remplir correctement tous les champs requis.";
+          alertBox.classList.add('bg-red-100', 'text-red-800', 'border-red-200');
+        }
+        alertBox.classList.remove('hidden');
+        alertBox.scrollIntoView({ behavior: 'smooth' });
+      })
+      .catch(error => {
+        alertBox.textContent = "Erreur de connexion. Veuillez réessayer.";
+        alertBox.classList.add('bg-red-100', 'text-red-800', 'border-red-200');
+        alertBox.classList.remove('hidden');
+      });
+    });
+  }
+</script>
+{% endblock %}

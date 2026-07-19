@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Faire un Don - Connect Jeunes{% endblock %}
+
+{% block content %}
+<main class="pt-32 pb-stack-lg">
+  <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <!-- Left Column: Impact Content -->
+    <div class="lg:col-span-5 space-y-6">
+      <div class="inline-flex items-center text-primary font-bold text-xs uppercase tracking-wider bg-primary/10 px-4 py-2 rounded-full">
+        <span class="material-symbols-outlined text-[18px] mr-2">favorite</span>
+        VOTRE IMPACT COMPTE
+      </div>
+      <h1 class="font-display text-display text-on-surface">Investissez dans l'avenir de la jeunesse</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+        Chaque don, petit ou grand, contribue directement à nos programmes d'éducation, de mentorat et d'insertion professionnelle pour les jeunes en difficulté.
+      </p>
+      <div class="space-y-4 pt-4">
+        <div class="flex items-start p-4 rounded-xl bg-white ambient-shadow border-l-4 border-secondary-container">
+          <div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center mr-4 flex-shrink-0">
+            <span class="material-symbols-outlined text-secondary">school</span>
+          </div>
+          <div>
+            <h4 class="font-headline-sm text-headline-sm text-on-surface">Éducation Numérique</h4>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">50€ permet de former un jeune aux outils digitaux essentiels pendant un mois.</p>
+          </div>
+        </div>
+        <div class="flex items-start p-4 rounded-xl bg-white ambient-shadow border-l-4 border-primary">
+          <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mr-4 flex-shrink-0">
+            <span class="material-symbols-outlined text-primary">diversity_3</span>
+          </div>
+          <div>
+            <h4 class="font-headline-sm text-headline-sm text-on-surface">Mentorat</h4>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">100€ finance un programme complet de parrainage professionnel.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 grid grid-cols-2 gap-4">
+        <div class="p-6 rounded-xl bg-surface-container-low flex flex-col items-center text-center">
+          <span class="font-display text-headline-lg text-primary">500+</span>
+          <span class="font-label-md text-label-md text-on-surface-variant">Jeunes Accompagnés</span>
+        </div>
+        <div class="p-6 rounded-xl bg-surface-container-low flex flex-col items-center text-center">
+          <span class="font-display text-headline-lg text-secondary">92%</span>
+          <span class="font-label-md text-label-md text-on-surface-variant">Fonds vers les missions</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right Column: Donation Form -->
+    <div class="lg:col-span-7">
+      <div class="bg-white rounded-xl ambient-shadow p-8 md:p-12 relative overflow-hidden">
+        <!-- Accent bar -->
+        <div class="absolute top-0 left-0 w-full h-1.5 energy-gradient"></div>
+        <div class="flex flex-col space-y-stack-md">
+          <div class="flex justify-between items-center">
+            <h2 class="font-headline-lg text-headline-lg text-on-surface">Faire un don</h2>
+            <div class="flex bg-surface-container-low p-1 rounded-lg">
+              <button class="px-4 py-1.5 rounded-md text-label-lg font-label-lg bg-white text-primary shadow-sm" id="btn-unique">Unique</button>
+              <button class="px-4 py-1.5 rounded-md text-label-lg font-label-lg text-on-surface-variant hover:text-primary transition-colors" id="btn-monthly">Mensuel</button>
+            </div>
+          </div>
+          
+          <!-- Amount Selection -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <button class="donation-btn group py-6 border-2 border-outline-variant rounded-xl flex flex-col items-center justify-center hover:border-primary transition-all duration-300" onclick="selectAmount(this, 10)">
+              <span class="font-display text-headline-md text-on-surface group-hover:text-primary">10€</span>
+              <span class="font-label-md text-label-md text-on-surface-variant">Soutien</span>
+            </button>
+            <button class="donation-btn group py-6 border-2 border-outline-variant rounded-xl flex flex-col items-center justify-center hover:border-primary transition-all duration-300" onclick="selectAmount(this, 50)">
+              <span class="font-display text-headline-md text-on-surface group-hover:text-primary">50€</span>
+              <span class="font-label-md text-label-md text-on-surface-variant">Impact</span>
+            </button>
+            <button class="donation-btn group py-6 border-2 border-outline-variant rounded-xl flex flex-col items-center justify-center hover:border-primary transition-all duration-300 donation-card-active border-primary bg-primary-container/20" onclick="selectAmount(this, 100)">
+              <span class="font-display text-headline-md text-primary">100€</span>
+              <span class="font-label-md text-label-md text-on-surface-variant">Action</span>
+            </button>
+            <button class="donation-btn group py-6 border-2 border-outline-variant rounded-xl flex flex-col items-center justify-center hover:border-primary transition-all duration-300" onclick="focusCustom(this)">
+              <span class="font-display text-headline-md text-on-surface group-hover:text-primary">Autre</span>
+              <span class="font-label-md text-label-md text-on-surface-variant">Libre</span>
+            </button>
+          </div>
+          
+          <!-- Custom Input -->
+          <div class="hidden" id="custom-amount-wrapper">
+            <label class="font-label-lg text-label-lg text-on-surface-variant mb-2 block">Montant personnalisé (€)</label>
+            <input class="w-full bg-surface-dim border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary rounded-xl px-6 py-4 text-body-lg" id="custom-amount-input" placeholder="Entrez le montant" type="number"/>
+          </div>
+          
+          <!-- Personal Info -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter pt-4">
+            <div class="space-y-2">
+              <label class="font-label-lg text-label-lg text-on-surface-variant">Prénom</label>
+              <input class="w-full bg-surface-dim border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary" placeholder="Jean" type="text"/>
+            </div>
+            <div class="space-y-2">
+              <label class="font-label-lg text-label-lg text-on-surface-variant">Nom</label>
+              <input class="w-full bg-surface-dim border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary" placeholder="Dupont" type="text"/>
+            </div>
+            <div class="md:col-span-2 space-y-2">
+              <label class="font-label-lg text-label-lg text-on-surface-variant">Email</label>
+              <input class="w-full bg-surface-dim border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary" placeholder="jean.dupont@email.com" type="email"/>
+            </div>
+          </div>
+          
+          <!-- Payment Selection -->
+          <div class="pt-6 border-t border-outline-variant/30">
+            <p class="font-label-lg text-label-lg text-on-surface-variant mb-4">Méthode de paiement sécurisée</p>
+            <div class="flex flex-wrap gap-4 items-center mb-8">
+              <div class="h-10 px-4 bg-surface-container-low rounded-lg flex items-center justify-center border border-outline-variant/20">
+                <span class="font-bold text-sm text-slate-500">CARTE BANCAIRE</span>
+              </div>
+              <div class="h-10 px-4 bg-surface-container-low rounded-lg flex items-center justify-center border border-outline-variant/20">
+                <span class="font-bold text-sm text-slate-500">MOBILE MONEY</span>
+              </div>
+              <div class="h-10 px-4 bg-surface-container-low rounded-lg flex items-center justify-center border border-outline-variant/20">
+                <span class="material-symbols-outlined text-[20px] text-on-surface-variant mr-2">lock</span>
+                <span class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">SSL 256-bit</span>
+              </div>
+            </div>
+            
+            <button class="w-full py-5 rounded-full energy-gradient text-white font-headline-md text-headline-md font-bold shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center space-x-3" onclick="alert('Simulation de paiement réussie ! Merci pour votre générosité.')">
+              <span>Confirmer mon don</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+            
+            <p class="text-center font-body-sm text-body-sm text-on-surface-variant mt-6">
+              Un reçu fiscal vous sera envoyé par email. 
+              <br/>
+              Votre don ouvre droit à une réduction d'impôt de 66%.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section class="py-stack-lg bg-surface-container-low">
+  <div class="max-w-container-max mx-auto px-gutter text-center space-y-12">
+    <h3 class="font-headline-md text-headline-md text-on-surface">Ils nous soutiennent</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter opacity-40 grayscale hover:grayscale-0 transition-all duration-700 max-w-3xl mx-auto">
+      <div class="flex items-center justify-center p-4 text-headline-sm font-bold text-outline">AFD</div>
+      <div class="flex items-center justify-center p-4 text-headline-sm font-bold text-outline">PADAC</div>
+      <div class="flex items-center justify-center p-4 text-headline-sm font-bold text-outline">Groupement IFE DON</div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  function selectAmount(btn, amount) {
+    // Clear active classes from all buttons
+    document.querySelectorAll('.donation-btn').forEach(b => {
+      b.classList.remove('border-primary', 'bg-primary-container/20');
+      b.querySelector('span').classList.remove('text-primary');
+      b.querySelector('span').classList.add('text-on-surface');
+    });
+    
+    // Add active classes to selected
+    btn.classList.add('border-primary', 'bg-primary-container/20');
+    const titleSpan = btn.querySelector('span');
+    titleSpan.classList.add('text-primary');
+    titleSpan.classList.remove('text-on-surface');
+    
+    // Hide custom wrapper
+    document.getElementById('custom-amount-wrapper').classList.add('hidden');
+  }
+
+  function focusCustom(btn) {
+    document.querySelectorAll('.donation-btn').forEach(b => {
+      b.classList.remove('border-primary', 'bg-primary-container/20');
+      b.querySelector('span').classList.remove('text-primary');
+      b.querySelector('span').classList.add('text-on-surface');
+    });
+    
+    btn.classList.add('border-primary', 'bg-primary-container/20');
+    btn.querySelector('span').classList.add('text-primary');
+    
+    const wrapper = document.getElementById('custom-amount-wrapper');
+    wrapper.classList.remove('hidden');
+    document.getElementById('custom-amount-input').focus();
+  }
+
+  // Monthly vs Unique toggle
+  const btnUnique = document.getElementById('btn-unique');
+  const btnMonthly = document.getElementById('btn-monthly');
+  if (btnUnique && btnMonthly) {
+    btnUnique.addEventListener('click', () => {
+      btnUnique.classList.add('bg-white', 'text-primary', 'shadow-sm');
+      btnMonthly.classList.remove('bg-white', 'text-primary', 'shadow-sm');
+      btnMonthly.classList.add('text-on-surface-variant');
+    });
+    btnMonthly.addEventListener('click', () => {
+      btnMonthly.classList.add('bg-white', 'text-primary', 'shadow-sm');
+      btnUnique.classList.remove('bg-white', 'text-primary', 'shadow-sm');
+      btnUnique.classList.add('text-on-surface-variant');
+    });
+  }
+</script>
+{% endblock %}

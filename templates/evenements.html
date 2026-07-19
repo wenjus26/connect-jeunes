@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Événements & Actions - Connect Jeunes{% endblock %}
+
+{% block content %}
+<main class="pt-32 pb-stack-lg px-gutter max-w-container-max mx-auto">
+  <!-- Featured Event -->
+  {% if featured_event %}
+  <div class="mb-stack-lg">
+    <h2 class="font-headline-lg text-headline-lg mb-8">À ne pas manquer</h2>
+    <div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col lg:flex-row border-t-4 border-energy-gradient-start">
+      <div class="lg:w-1/2 h-80 lg:h-auto overflow-hidden">
+        {% if featured_event.image_principale %}
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="{{ featured_event.titre }}" src="{{ featured_event.image_principale.url }}"/>
+        {% else %}
+          <div class="w-full h-full bg-slate-200 flex items-center justify-center min-h-[300px]">
+            <span class="material-symbols-outlined text-5xl text-slate-400">event</span>
+          </div>
+        {% endif %}
+      </div>
+      <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+        <div class="flex gap-4 mb-6">
+          <div class="flex items-center gap-1 text-primary font-label-lg">
+            <span class="material-symbols-outlined text-base">calendar_today</span>
+            {{ featured_event.date_debut|date:"l d F Y" }}
+          </div>
+          {% if featured_event.heure_debut %}
+          <div class="flex items-center gap-1 text-primary font-label-lg">
+            <span class="material-symbols-outlined text-base">schedule</span>
+            {{ featured_event.heure_debut|time:"H:i" }} {% if featured_event.heure_fin %} - {{ featured_event.heure_fin|time:"H:i" }}{% endif %}
+          </div>
+          {% endif %}
+        </div>
+        <h3 class="font-display text-headline-lg mb-4">{{ featured_event.titre }}</h3>
+        <p class="font-body-md text-on-surface-variant mb-8">{{ featured_event.description_courte }}</p>
+        <div class="flex items-center gap-4 mb-8 text-on-surface-variant">
+          <span class="material-symbols-outlined">location_on</span>
+          <span class="font-body-md">{{ featured_event.lieu }}</span>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <a href="{% url 'evenement_detail' uuid=featured_event.uuid %}" class="energy-gradient text-white px-8 py-4 rounded-xl font-label-lg shadow-xl hover:scale-105 transition-transform inline-block text-center">Voir les détails</a>
+          <a href="{% url 'inscription_sommet' %}" class="bg-primary text-white px-8 py-4 rounded-xl font-label-lg hover:bg-primary-container transition-all inline-block text-center">S'inscrire</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Events Grid -->
+  <div class="mb-stack-lg">
+    <h2 class="font-headline-lg text-headline-lg mb-8">Explorer les événements</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for event in evenements %}
+        <!-- Card -->
+        <div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow group flex flex-col justify-between">
+          <div>
+            <div class="h-48 relative overflow-hidden">
+              {% if event.image_principale %}
+                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="{{ event.titre }}" src="{{ event.image_principale.url }}"/>
+              {% else %}
+                <div class="w-full h-full bg-slate-200 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-4xl text-slate-400">event</span>
+                </div>
+              {% endif %}
+              <div class="absolute top-4 left-4 bg-tertiary text-white px-3 py-1 rounded-full text-label-md">{{ event.get_categorie_display }}</div>
+            </div>
+            <div class="p-6 font-body-sm">
+              <div class="text-primary font-label-lg mb-2">
+                {{ event.date_debut|date:"d M Y" }}{% if event.heure_debut %} | {{ event.heure_debut|time:"H:i" }}{% endif %}
+              </div>
+              <h4 class="font-headline-sm text-headline-sm mb-3 hover:text-primary transition-colors">
+                <a href="{% url 'evenement_detail' uuid=event.uuid %}">{{ event.titre }}</a>
+              </h4>
+              <p class="text-on-surface-variant mb-4">{{ event.description_courte }}</p>
+              <div class="flex items-center gap-2 text-on-surface-variant text-xs mb-4">
+                <span class="material-symbols-outlined text-sm">location_on</span> {{ event.lieu }}
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 flex justify-between items-center font-bold text-xs uppercase tracking-wider">
+            <a href="{% url 'evenement_detail' uuid=event.uuid %}" class="text-primary hover:underline">Détails</a>
+            <a href="{% url 'inscription_sommet' %}" class="text-secondary hover:underline">S'inscrire</a>
+          </div>
+        </div>
+      {% empty %}
+        <p class="text-center col-span-3 text-on-surface-variant italic py-10">Aucun événement planifié pour le moment.</p>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Calendar Section -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-stack-lg items-start">
+    <div class="lg:col-span-2">
+      <h2 class="font-headline-lg text-headline-lg mb-8">Calendrier Mensuel</h2>
+      <div class="bg-surface-container-lowest rounded-xl p-8 ambient-shadow overflow-x-auto">
+        <div class="min-w-[600px]">
+          <div class="flex justify-between items-center mb-8">
+            <h3 class="font-headline-md text-headline-md">Août 2025</h3>
+            <div class="flex gap-2">
+              <button class="p-2 rounded-full hover:bg-surface-dim transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+              <button class="p-2 rounded-full hover:bg-surface-dim transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+            </div>
+          </div>
+          <div class="grid grid-cols-7 gap-2 text-center mb-4">
+            <div class="font-label-lg text-outline">LUN</div>
+            <div class="font-label-lg text-outline">MAR</div>
+            <div class="font-label-lg text-outline">MER</div>
+            <div class="font-label-lg text-outline">JEU</div>
+            <div class="font-label-lg text-outline">VEN</div>
+            <div class="font-label-lg text-outline">SAM</div>
+            <div class="font-label-lg text-outline">DIM</div>
+          </div>
+          <div class="grid grid-cols-7 gap-2 text-center">
+            <!-- Placeholder days -->
+            <div class="p-4 rounded-lg bg-surface-light text-outline-variant">26</div>
+            <div class="p-4 rounded-lg bg-surface-light text-outline-variant">27</div>
+            <div class="p-4 rounded-lg bg-surface-light text-outline-variant">28</div>
+            <div class="p-4 rounded-lg bg-surface-light text-outline-variant">29</div>
+            <div class="p-4 rounded-lg bg-surface-container hover:bg-primary-container/10 transition-colors cursor-pointer relative">
+              1 <span class="absolute bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-energy-gradient-end"></span>
+            </div>
+            <div class="p-4 rounded-lg bg-surface-container bg-primary-container/20 font-bold">2</div>
+            <div class="p-4 rounded-lg bg-surface-container">3</div>
+            <div class="p-4 rounded-lg bg-surface-container">4</div>
+            <div class="p-4 rounded-lg bg-surface-container">5</div>
+            <div class="p-4 rounded-lg bg-surface-container">6</div>
+            <div class="p-4 rounded-lg bg-surface-container">7</div>
+            <div class="p-4 rounded-lg bg-surface-container">8</div>
+            <div class="p-4 rounded-lg bg-surface-container">9</div>
+            <div class="p-4 rounded-lg bg-surface-container">10</div>
+            <div class="p-4 rounded-lg bg-surface-container">11</div>
+            <div class="p-4 rounded-lg bg-surface-container">12</div>
+            <div class="p-4 rounded-lg bg-surface-container">13</div>
+            <div class="p-4 rounded-lg bg-surface-container">14</div>
+            <div class="p-4 rounded-lg bg-surface-container">15</div>
+            <div class="p-4 rounded-lg bg-surface-container">16</div>
+            <div class="p-4 rounded-lg bg-surface-container">17</div>
+            <div class="p-4 rounded-lg bg-surface-container">18</div>
+            <div class="p-4 rounded-lg bg-surface-container">19</div>
+            <div class="p-4 rounded-lg bg-surface-container">20</div>
+            <div class="p-4 rounded-lg bg-surface-container">21</div>
+            <div class="p-4 rounded-lg bg-surface-container">22</div>
+            <div class="p-4 rounded-lg bg-surface-container">23</div>
+            <div class="p-4 rounded-lg bg-surface-container">24</div>
+            <div class="p-4 rounded-lg bg-surface-container">25</div>
+            <div class="p-4 rounded-lg bg-surface-container">26</div>
+            <div class="p-4 rounded-lg bg-surface-container">27</div>
+            <div class="p-4 rounded-lg bg-surface-container">28</div>
+            <div class="p-4 rounded-lg bg-surface-container">29</div>
+            <div class="p-4 rounded-lg bg-surface-container">30</div>
+            <div class="p-4 rounded-lg bg-surface-container">31</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Legend Sidebar -->
+    <aside class="space-y-stack-md">
+      <div class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/30">
+        <h3 class="font-headline-sm text-headline-sm mb-6">Catégories d'actions</h3>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="w-3.5 h-3.5 rounded-full energy-gradient shrink-0"></span>
+            <span class="font-label-lg">Orientation Professionnelle</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-3.5 h-3.5 rounded-full bg-primary shrink-0"></span>
+            <span class="font-label-lg">Formations Numériques</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-3.5 h-3.5 rounded-full bg-tertiary shrink-0"></span>
+            <span class="font-label-lg">Solidarité &amp; Inclusion</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-3.5 h-3.5 rounded-full bg-secondary-container shrink-0"></span>
+            <span class="font-label-lg">Antennes Locales</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+{% endblock %}

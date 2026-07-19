@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Galerie & Médias - Connect Jeunes{% endblock %}
+
+{% block content %}
+<main class="pt-32 pb-stack-lg max-w-container-max mx-auto px-gutter">
+  <div class="text-center mb-16">
+    <span class="text-primary font-label-lg text-label-lg uppercase tracking-widest mb-2 block">Notre Impact en Images</span>
+    <h1 class="font-display text-display mb-stack-sm text-primary">Galerie Médiathèque</h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+      Retrouvez les moments forts de nos formations, actions solidaires, visites professionnelles et rencontres communautaires sur le terrain.
+    </p>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="flex flex-wrap justify-center gap-2 mb-12">
+    <button class="px-5 py-2.5 rounded-full bg-primary text-white font-label-lg text-label-lg shadow-md filter-btn" data-filter="all">Tout</button>
+    <button class="px-5 py-2.5 rounded-full bg-white text-on-surface-variant hover:bg-surface-variant transition-all font-label-lg text-label-lg filter-btn" data-filter="orientation">Orientation</button>
+    <button class="px-5 py-2.5 rounded-full bg-white text-on-surface-variant hover:bg-surface-variant transition-all font-label-lg text-label-lg filter-btn" data-filter="formation">Formation</button>
+    <button class="px-5 py-2.5 rounded-full bg-white text-on-surface-variant hover:bg-surface-variant transition-all font-label-lg text-label-lg filter-btn" data-filter="solidarite">Solidarité</button>
+    <button class="px-5 py-2.5 rounded-full bg-white text-on-surface-variant hover:bg-surface-variant transition-all font-label-lg text-label-lg filter-btn" data-filter="exploration">Exploration</button>
+    <button class="px-5 py-2.5 rounded-full bg-white text-on-surface-variant hover:bg-surface-variant transition-all font-label-lg text-label-lg filter-btn" data-filter="inclusion">Inclusion</button>
+  </div>
+
+  <!-- Media Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="gallery-grid">
+    {% for media in medias %}
+      <div class="group relative aspect-video bg-surface-container-low rounded-xl overflow-hidden ambient-shadow cursor-pointer gallery-item" data-category="{{ media.categorie }}">
+        {% if media.image %}
+          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="{{ media.titre }}" src="{{ media.image.url }}"/>
+        {% else %}
+          <div class="w-full h-full bg-slate-200 flex items-center justify-center">
+            <span class="material-symbols-outlined text-4xl text-slate-400">image</span>
+          </div>
+        {% endif %}
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+          <span class="text-secondary font-label-md text-label-md uppercase tracking-wider mb-1">{{ media.get_categorie_display }}</span>
+          <h3 class="text-white font-headline-sm text-headline-sm">{{ media.titre }}</h3>
+        </div>
+      </div>
+    {% empty %}
+      <!-- Fallbacks -->
+      <div class="group relative aspect-video bg-surface-container-low rounded-xl overflow-hidden ambient-shadow cursor-pointer gallery-item" data-category="orientation">
+        <img class="w-full h-full object-cover" alt="Orientation conference" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7Ec7zrMb9HLaKKlrKfBbKe6XS88KKZOt_5ShUGTp30nuKtwUk1I-ArIdpayITcgoU1Xfcmm55T33tnjrScNAGUTzfdVKeyPXWLd9M7V0aFFtNlCVGkwgConh5yh22sbzhfPSbc9o1Ms6KxFUL7-VDgB39j9g-v-W5xTcUZUWJbL3zdK-jCQYLR9ahOz9cams6Ve61Hq1-DbH1FsHjhPeMfWAfpgBT7Rs52N4p8RUFC-ZlpbnpQYxj"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+          <span class="text-secondary font-label-md text-label-md uppercase tracking-wider mb-1">Orientation</span>
+          <h3 class="text-white font-headline-sm text-headline-sm">Conférence d'Orientation</h3>
+        </div>
+      </div>
+      <div class="group relative aspect-video bg-surface-container-low rounded-xl overflow-hidden ambient-shadow cursor-pointer gallery-item" data-category="formation">
+        <img class="w-full h-full object-cover" alt="Digital training" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnoIZXTiK-QCXsjr0vXq7xfxvu9VW-iByFh9GsQ1jpyn0RL49Vw-JMpM2u53Tq8WAjx7Oy1dlQpUYNGDB-Cwl6N5t2Go-8wpEulqQgVaBbOVsy9MGVgKqF-Q47XT49q-EabCR5nDrXDykCah15ae0BM2cdWxEH6EY6YhwY9VW4XItsvB56nFR5v6XasP9MFjHdRMIQodzTmLYx4wF0yHnY-r3anGni5SQEeyM0ZM8lAhFBCfMxRZR7"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+          <span class="text-secondary font-label-md text-label-md uppercase tracking-wider mb-1">Formation</span>
+          <h3 class="text-white font-headline-sm text-headline-sm">Formations Numériques</h3>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</main>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  // Simple filtering functionality
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Toggle button classes
+      filterButtons.forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-white', 'shadow-md');
+        btn.classList.add('bg-white', 'text-on-surface-variant');
+      });
+      button.classList.add('bg-primary', 'text-white', 'shadow-md');
+      button.classList.remove('bg-white', 'text-on-surface-variant');
+
+      const filterValue = button.getAttribute('data-filter');
+      
+      galleryItems.forEach(item => {
+        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+{% endblock %}
