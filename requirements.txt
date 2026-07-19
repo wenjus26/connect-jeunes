@@ -1,6 +1,9 @@
-django-phonenumber-field
-phonenumbers
+Django>=4.2,<5.0
 django-countries
 django-cleanup
 django-summernote
 pillow
+django-phonenumber-field
+phonenumbers
+gunicorn==23.0.0
+mysqlclient==2.2.8
