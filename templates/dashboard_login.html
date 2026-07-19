@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Connexion Espace Membre - Connect Jeunes{% endblock %}
+
+{% block content %}
+<main class="pt-32 pb-stack-lg min-h-[80vh] flex items-center justify-center bg-slate-50 relative overflow-hidden">
+  <!-- Decorative Gradients -->
+  <div class="absolute -top-40 -left-40 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+  <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-secondary/15 rounded-full blur-3xl"></div>
+
+  <div class="max-w-md w-full px-gutter relative z-10">
+    <div class="bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-outline-variant/30 shadow-2xl space-y-6">
+      
+      <!-- Logo / Header -->
+      <div class="text-center">
+        <span class="inline-block p-3 bg-primary-container/20 rounded-2xl text-primary mb-4">
+          <span class="material-symbols-outlined text-4xl">fingerprint</span>
+        </span>
+        <h1 class="font-display text-2xl text-primary font-bold">Espace Membre</h1>
+        <p class="text-body-sm text-on-surface-variant mt-2">Connectez-vous pour accéder à votre badge et profil d'adhérent.</p>
+      </div>
+
+      <!-- Messages / Errors -->
+      {% if messages %}
+        <div class="space-y-2">
+          {% for message in messages %}
+            <div class="p-3.5 text-xs rounded-lg {% if message.tags == 'error' %}bg-red-50 text-red-700 border border-red-200{% else %}bg-blue-50 text-blue-700 border border-blue-200{% endif %}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <!-- Login Form -->
+      <form class="space-y-4" method="POST" action="{% url 'member_dashboard' %}">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="login">
+        
+        <div class="space-y-1">
+          <label class="block text-xs font-bold text-outline uppercase tracking-wider">Adresse Email</label>
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">mail</span>
+            <input type="email" name="email" required placeholder="exemple@gmail.com" 
+                   class="pl-10 pr-4 py-3 bg-surface-light border-outline-variant rounded-xl w-full text-sm focus:ring-primary focus:border-primary outline-none transition-all">
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <label class="block text-xs font-bold text-outline uppercase tracking-wider">Numéro NIP ou Téléphone</label>
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">key</span>
+            <input type="text" name="nip_or_phone" required placeholder="NIP à 10 chiffres ou +229..." 
+                   class="pl-10 pr-4 py-3 bg-surface-light border-outline-variant rounded-xl w-full text-sm focus:ring-primary focus:border-primary outline-none transition-all">
+          </div>
+          <span class="text-[10px] text-on-surface-variant italic">Utilisez l'email et le NIP/Téléphone fournis lors de votre adhésion.</span>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 bg-primary hover:bg-primary-container text-white font-bold rounded-xl shadow-lg transition-colors flex items-center justify-center gap-2">
+          <span>Se Connecter</span>
+          <span class="material-symbols-outlined text-[18px]">login</span>
+        </button>
+      </form>
+
+      <!-- Footer Action -->
+      <div class="text-center pt-4 border-t border-outline-variant/30 text-xs">
+        <span class="text-on-surface-variant">Pas encore membre ? </span>
+        <a href="{% url 'inscription_sommet' %}" class="text-primary font-bold hover:underline">Inscrivez-vous ici</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+{% endblock %}

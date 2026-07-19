@@ -153,6 +153,7 @@
       <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-events" href="{% url 'evenements' %}">Événements</a>
       <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-blog" href="{% url 'blog' %}">Actualités</a>
       <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-contact" href="{% url 'contact' %}">Contact</a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors font-bold" id="nav-dashboard" href="{% url 'member_dashboard' %}">Espace Membre</a>
     </nav>
     
     <!-- Action Buttons & Menu Toggle -->
@@ -219,15 +220,15 @@
         </div>
       </div>
 
-      <!-- Section: Contact -->
-      <div>
         <h4 class="font-label-lg text-primary text-xs uppercase tracking-wider mb-2 font-bold opacity-80">Nous Rejoindre</h4>
-        <div class="grid grid-cols-1 gap-2">
+        <div class="grid grid-cols-2 gap-2">
           <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs" id="mob-nav-contact" href="{% url 'contact' %}">
-            <span class="material-symbols-outlined text-sm">mail</span> Contactez-nous
+            <span class="material-symbols-outlined text-sm">mail</span> Contact
+          </a>
+          <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors py-2 px-3 bg-slate-50 hover:bg-slate-100/50 rounded font-medium text-xs font-bold" id="mob-nav-dashboard" href="{% url 'member_dashboard' %}">
+            <span class="material-symbols-outlined text-sm">fingerprint</span> Espace Membre
           </a>
         </div>
-      </div>
 
     </div>
 
@@ -321,7 +322,7 @@
         <ul class="space-y-4">
           <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="{% url 'contact' %}">Contactez-nous</a></li>
           <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="{% url 'inscription_sommet' %}">Adhérer</a></li>
-          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors" href="{% url 'inscription_sommet' %}">Inscription Sommet</a></li>
+          <li><a class="text-on-surface-variant font-body-sm hover:text-secondary-container transition-colors font-bold" href="{% url 'member_dashboard' %}">Espace Membre</a></li>
         </ul>
       </div>
     </div>

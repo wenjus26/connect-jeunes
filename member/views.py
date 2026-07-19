@@ -2,6 +2,7 @@ import uuid
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse, HttpResponse
 from django.contrib import messages
+from django.db.models import Q
 from django.views.decorators.http import require_POST
 from .models import (
     Pilier, Temoignage, Projet, Evenement, Article, GalerieMedia,
@@ -216,3 +217,74 @@ def evenement_detail(request, uuid):
     evenement = get_object_or_404(Evenement, uuid=uuid, actif=True)
     other_events = Evenement.objects.filter(actif=True).exclude(uuid=uuid)[:3]
     return render(request, 'evenement_detail.html', {'evenement': evenement, 'other_events': other_events})
+
+
+# -------------------------------
+# Member Dashboard Views
+# -------------------------------
+
+def member_dashboard(request):
+    member_id = request.session.get('member_id')
+    member = None
+    if member_id:
+        try:
+            member = Member.objects.get(id=member_id)
+        except Member.DoesNotExist:
+            request.session.pop('member_id', None)
+
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        
+        # Login
+        if action == 'login':
+            email = request.POST.get('email', '').strip()
+            nip_or_phone = request.POST.get('nip_or_phone', '').strip()
+            
+            member_found = Member.objects.filter(
+                Q(email__iexact=email) & (Q(nip=nip_or_phone) | Q(phone=nip_or_phone))
+            ).first()
+            
+            if member_found:
+                request.session['member_id'] = member_found.id
+                messages.success(request, f"Ravi de vous revoir, {member_found.first_name} !")
+                return redirect('member_dashboard')
+            else:
+                messages.error(request, "Aucun membre trouvé avec ces identifiants de connexion.")
+                
+        # Profile Update
+        elif action == 'update_profile' and member:
+            profession = request.POST.get('profession', '').strip()
+            address = request.POST.get('address', '').strip()
+            
+            member.profession = profession
+            member.address = address
+            member.save()
+            
+            # Update badge address if it exists
+            badge = BadgeMembre.objects.filter(telephone=str(member.phone)).first()
+            if badge:
+                badge.adresse = address
+                badge.save()
+                
+            messages.success(request, "Votre profil a été mis à jour avec succès !")
+            return redirect('member_dashboard')
+
+    if member:
+        badge = BadgeMembre.objects.filter(telephone=str(member.phone)).first()
+        upcoming_events = Evenement.objects.filter(actif=True).order_by('date_debut')[:3]
+        active_projects = Projet.objects.filter(actif=True)[:3]
+        
+        return render(request, 'dashboard.html', {
+            'member': member,
+            'badge': badge,
+            'upcoming_events': upcoming_events,
+            'active_projects': active_projects
+        })
+
+    return render(request, 'dashboard_login.html')
+
+
+def member_logout(request):
+    request.session.pop('member_id', None)
+    messages.info(request, "Vous avez été déconnecté avec succès.")
+    return redirect('member_dashboard')

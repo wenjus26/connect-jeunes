@@ -25,4 +25,8 @@ urlpatterns = [
 
     # Newsletter subscription API
     path('ajax/subscribe-newsletter/', views.subscribe_newsletter, name='subscribe_newsletter'),
+
+    # Member Dashboard
+    path('dashboard/', views.member_dashboard, name='member_dashboard'),
+    path('dashboard/logout/', views.member_logout, name='member_logout'),
 ]
