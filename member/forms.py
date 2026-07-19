@@ -30,7 +30,7 @@ class MemberForm(forms.ModelForm):
             }),
             'phone': forms.TextInput(attrs={
                 'class': 'w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input',
-                'placeholder': '+229 01 46 17 16 60'
+                'placeholder': 'Ex: +229 01 46 17 16 60 (WhatsApp)'
             }),
             'birth_date': forms.DateInput(attrs={
                 'class': 'w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input',
