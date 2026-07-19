@@ -7,6 +7,11 @@ class Command(BaseCommand):
     help = "Load Bénin locations from nested JSON into database"
 
     def handle(self, *args, **kwargs):
+        # Skip if data already exists in database
+        if Department.objects.exists():
+            self.stdout.write(self.style.SUCCESS("Les données géographiques du Bénin sont déjà chargées. Passage."))
+            return
+
         # Chemin relatif vers le JSON dans le même dossier que cette commande
         dir_path = os.path.dirname(os.path.realpath(__file__))
         json_file = os.path.join(dir_path, 'decoupage_territorial_benin.json')
