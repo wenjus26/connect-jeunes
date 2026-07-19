@@ -11,7 +11,7 @@ La configuration s'inspire directement de l'architecture mise en œuvre dans le 
 ```mermaid
 graph TD
     User([Utilisateur]) -->|HTTPS: Port 443| Nginx[Serveur Nginx Host]
-    Nginx -->|Reverse Proxy: Port 8030| WebContainer[Conteneur Docker Web: Gunicorn]
+    Nginx -->|Reverse Proxy: Port 8032| WebContainer[Conteneur Docker Web: Gunicorn]
     WebContainer -->|Shared Network| DBContainer[(Conteneur Central MySQL / SQLite)]
     GitHub[GitHub Actions] -->|SSH: Pull & Build| VPS[VPS Host]
 ```

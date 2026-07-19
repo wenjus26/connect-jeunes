@@ -4,7 +4,7 @@ services:
     container_name: connect_jeunes_web
     restart: always
     ports:
-      - "127.0.0.1:8030:8030" # accessible uniquement en local sur le VPS
+      - "127.0.0.1:8032:8032" # accessible uniquement en local sur le VPS
     env_file:
       - .env
     environment:
