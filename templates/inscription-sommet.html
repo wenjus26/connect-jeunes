@@ -157,13 +157,6 @@
                 {% endif %}
               </div>
               <div class="space-y-2">
-                <label class="font-label-lg text-label-lg text-on-surface-variant block">Adresse de Résidence</label>
-                {{ form.address }}
-                {% if form.address.errors %}
-                  <p class="text-red-500 text-xs">{{ form.address.errors.as_text }}</p>
-                {% endif %}
-              </div>
-              <div class="space-y-2">
                 <label class="font-label-lg text-label-lg text-on-surface-variant block">Pays</label>
                 {{ form.country }}
                 {% if form.country.errors %}
@@ -213,13 +206,6 @@
                 {{ form.neighborhood }}
                 {% if form.neighborhood.errors %}
                   <p class="text-red-500 text-xs">{{ form.neighborhood.errors.as_text }}</p>
-                {% endif %}
-              </div>
-              <div class="space-y-2 md:col-span-2">
-                <label class="font-label-lg text-label-lg text-on-surface-variant block">Zone d'Influence</label>
-                {{ form.influence_zone }}
-                {% if form.influence_zone.errors %}
-                  <p class="text-red-500 text-xs">{{ form.influence_zone.errors.as_text }}</p>
                 {% endif %}
               </div>
             </div>

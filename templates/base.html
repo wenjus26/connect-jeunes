@@ -148,10 +148,19 @@
     <nav class="hidden md:flex gap-8 items-center">
       <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-home" href="{% url 'index' %}">Accueil</a>
       <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-about" href="{% url 'index' %}#about">Notre Histoire</a>
-      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-programs" href="{% url 'programmes' %}">Programmes</a>
-      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-projects" href="{% url 'projets' %}">Projets</a>
-      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-events" href="{% url 'evenements' %}">Événements</a>
-      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-blog" href="{% url 'blog' %}">Actualités</a>
+      <div class="relative group">
+        <button class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 focus:outline-none py-2">
+          <span>Nos Activités</span>
+          <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+        </button>
+        <!-- Dropdown Menu -->
+        <div class="absolute left-0 top-full mt-1 w-48 bg-white/95 backdrop-blur-md border border-outline-variant/30 rounded-2xl shadow-xl py-3 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50">
+          <a class="block px-5 py-2.5 text-label-lg text-on-surface-variant hover:text-primary hover:bg-slate-50 transition-colors" id="nav-programs" href="{% url 'programmes' %}">Programmes</a>
+          <a class="block px-5 py-2.5 text-label-lg text-on-surface-variant hover:text-primary hover:bg-slate-50 transition-colors" id="nav-projects" href="{% url 'projets' %}">Projets</a>
+          <a class="block px-5 py-2.5 text-label-lg text-on-surface-variant hover:text-primary hover:bg-slate-50 transition-colors" id="nav-events" href="{% url 'evenements' %}">Événements</a>
+          <a class="block px-5 py-2.5 text-label-lg text-on-surface-variant hover:text-primary hover:bg-slate-50 transition-colors" id="nav-blog" href="{% url 'blog' %}">Actualités</a>
+        </div>
+      </div>
       <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" id="nav-contact" href="{% url 'contact' %}">Contact</a>
       <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors font-bold" id="nav-dashboard" href="{% url 'member_dashboard' %}">Espace Membre</a>
     </nav>

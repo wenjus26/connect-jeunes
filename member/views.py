@@ -254,17 +254,9 @@ def member_dashboard(request):
         # Profile Update
         elif action == 'update_profile' and member:
             profession = request.POST.get('profession', '').strip()
-            address = request.POST.get('address', '').strip()
             
             member.profession = profession
-            member.address = address
             member.save()
-            
-            # Update badge address if it exists
-            badge = BadgeMembre.objects.filter(telephone=str(member.phone)).first()
-            if badge:
-                badge.adresse = address
-                badge.save()
                 
             messages.success(request, "Votre profil a été mis à jour avec succès !")
             return redirect('member_dashboard')

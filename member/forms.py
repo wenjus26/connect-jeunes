@@ -16,8 +16,8 @@ class MemberForm(forms.ModelForm):
         model = Member
         fields = [
             'civility', 'email', 'phone', 'birth_date', 'profession',
-            'address', 'country', 'department', 'commune', 'arrondissement',
-            'neighborhood', 'influence_zone', 'recommende_par',
+            'country', 'department', 'commune', 'arrondissement',
+            'neighborhood', 'recommende_par',
             'nip', 'consent'
         ]
         widgets = {
@@ -40,10 +40,6 @@ class MemberForm(forms.ModelForm):
                 'class': 'w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input',
                 'placeholder': 'Ex: Étudiant, Entrepreneur...'
             }),
-            'address': forms.TextInput(attrs={
-                'class': 'w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input',
-                'placeholder': 'Votre adresse de résidence'
-            }),
             'country': forms.Select(attrs={
                 'class': 'w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input'
             }),
@@ -62,10 +58,6 @@ class MemberForm(forms.ModelForm):
             'neighborhood': forms.Select(attrs={
                 'class': 'w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input',
                 'id': 'id_neighborhood'
-            }),
-            'influence_zone': forms.TextInput(attrs={
-                'class': 'w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input',
-                'placeholder': 'Ex: Ouémé, Littoral...'
             }),
             'recommende_par': forms.Select(attrs={
                 'class': 'w-full bg-surface-light border-outline-variant rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none form-input'
