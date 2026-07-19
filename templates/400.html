@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Requête Incorrecte (400) - Connect Jeunes{% endblock %}
+
+{% block content %}
+<main class="pt-32 pb-stack-lg min-h-[75vh] flex items-center justify-center bg-slate-50 relative overflow-hidden">
+  <div class="max-w-md w-full px-gutter text-center relative z-10 space-y-6">
+    <div class="inline-block p-6 bg-amber-100 text-amber-600 rounded-full mb-2">
+      <span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">warning_amber</span>
+    </div>
+    
+    <h1 class="font-display text-7xl font-extrabold text-amber-600 leading-none">400</h1>
+    <h2 class="font-display text-xl font-bold text-on-surface">Requête incorrecte ou corrompue</h2>
+    <p class="text-body-md text-on-surface-variant max-w-sm mx-auto leading-relaxed">
+      Le serveur n'a pas pu traiter la demande car celle-ci comporte des paramètres erronés ou mal formés.
+    </p>
+
+    <div class="pt-4 flex justify-center">
+      <a href="{% url 'index' %}" class="px-8 py-3.5 bg-primary hover:bg-primary-container text-white font-bold rounded-xl shadow-lg transition-colors flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">home</span>
+        <span>Retourner à l'accueil</span>
+      </a>
+    </div>
+  </div>
+</main>
+{% endblock %}

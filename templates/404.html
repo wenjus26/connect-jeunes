@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Page Non Trouvée (404) - Connect Jeunes{% endblock %}
+
+{% block content %}
+<main class="pt-32 pb-stack-lg min-h-[75vh] flex items-center justify-center bg-slate-50 relative overflow-hidden">
+  <!-- Decorative Gradients -->
+  <div class="absolute -top-40 -left-40 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+  <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+
+  <div class="max-w-md w-full px-gutter text-center relative z-10 space-y-6">
+    <div class="inline-block p-6 bg-primary/10 rounded-full text-primary mb-2 animate-bounce">
+      <span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">explore_off</span>
+    </div>
+    
+    <h1 class="font-display text-7xl font-extrabold text-primary leading-none">404</h1>
+    <h2 class="font-display text-xl font-bold text-on-surface">Oups, cette page s'est envolée !</h2>
+    <p class="text-body-md text-on-surface-variant max-w-sm mx-auto leading-relaxed">
+      L'adresse URL saisie est incorrecte, ou la page que vous recherchez a été déplacée ou supprimée.
+    </p>
+
+    <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
+      <a href="{% url 'index' %}" class="px-8 py-3.5 bg-primary hover:bg-primary-container text-white font-bold rounded-xl shadow-lg transition-colors flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">home</span>
+        <span>Retourner à l'accueil</span>
+      </a>
+      <a href="{% url 'contact' %}" class="px-8 py-3.5 border border-outline-variant hover:bg-surface-variant/30 text-on-surface font-bold rounded-xl transition-colors flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">mail</span>
+        <span>Nous signaler le bug</span>
+      </a>
+    </div>
+  </div>
+</main>
+{% endblock %}

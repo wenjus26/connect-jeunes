@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erreur Interne (500) - Connect Jeunes</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Material Symbols Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center relative overflow-hidden">
+  
+  <!-- Decorative Gradients -->
+  <div class="absolute -top-40 -left-40 w-96 h-96 bg-red-500/10 rounded-full blur-3xl"></div>
+  <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
+
+  <div class="max-w-md w-full px-6 text-center relative z-10 space-y-6">
+    <div class="inline-block p-6 bg-red-100 text-red-600 rounded-full mb-2">
+      <span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">error</span>
+    </div>
+    
+    <h1 class="text-7xl font-extrabold text-red-600 leading-none">500</h1>
+    <h2 class="text-xl font-bold text-slate-800">Erreur Interne du Serveur</h2>
+    <p class="text-sm text-slate-600 max-w-sm mx-auto leading-relaxed">
+      Désolé, une anomalie imprévue est survenue sur notre serveur. Nos techniciens ont été notifiés et travaillent à la résolution du problème.
+    </p>
+
+    <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
+      <a href="/" class="px-8 py-3 bg-[#0260aa] hover:bg-[#1e457e] text-white font-bold rounded-xl shadow-lg transition-colors flex items-center justify-center gap-2 text-sm">
+        <span class="material-symbols-outlined text-[18px]">home</span>
+        <span>Retourner à l'accueil</span>
+      </a>
+      <a href="/contact/" class="px-8 py-3 border border-slate-300 hover:bg-slate-100 text-slate-700 font-bold rounded-xl transition-colors flex items-center justify-center gap-2 text-sm">
+        <span class="material-symbols-outlined text-[18px]">support_agent</span>
+        <span>Contacter le support</span>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
