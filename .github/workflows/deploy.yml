@@ -15,8 +15,13 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            if [ ! -d "/var/www/customer/connect-jeunes/.git" ]; then
+              git clone https://github.com/wenjus26/connect-jeunes.git /var/www/customer/connect-jeunes
+            else
+              cd /var/www/customer/connect-jeunes
+              git pull origin main
+            fi
             cd /var/www/customer/connect-jeunes
-            git pull origin main
             docker compose up -d --build
             docker compose exec -T web python manage.py migrate
             docker compose exec -T web python manage.py collectstatic --noinput
