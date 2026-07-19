@@ -41,16 +41,7 @@ export_as_csv.short_description = "Exporter la sélection en CSV"
 
 
 # Inlines
-class BadgeMembreInline(admin.StackedInline):
-    model = BadgeMembre
-    extra = 0
-    can_delete = False
-    readonly_fields = ('barcode_id', 'barcode_base64', 'date_creation')
-    fieldsets = (
-        ('Informations du Badge', {
-            'fields': ('barcode_id', 'statut', 'barcode_base64', 'date_creation')
-        }),
-    )
+
 
 
 # Geographic Admin configuration
@@ -101,8 +92,7 @@ class MemberAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'email', 'phone', 'nip', 'recommende_par', 'created_at')
     search_fields = ('first_name', 'last_name', 'email', 'phone', 'nip')
     list_filter = ('civility', 'country', 'department', 'commune', 'consent', 'created_at')
-    readonly_fields = ('created_at', 'updated_at')
-    inlines = [BadgeMembreInline]
+    readonly_fields = ('created_at',)
     actions = [export_as_csv]
 
     fieldsets = (
@@ -120,7 +110,7 @@ class MemberAdmin(admin.ModelAdmin):
         }),
         ('Métadonnées', {
             'classes': ('collapse',),
-            'fields': ('created_at', 'updated_at')
+            'fields': ('created_at',)
         }),
     )
 
