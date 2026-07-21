@@ -9,6 +9,20 @@
     
     {% block meta_seo %}
     <meta name="description" content="Chez Connect Jeunes, nous agissons pour l’épanouissement des jeunes à travers le numérique, l’éducation, la solidarité et l’engagement communautaire.">
+    
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:title" content="Connect Jeunes | Construire des ponts pour l’autonomisation des jeunes !">
+    <meta property="og:description" content="Chez Connect Jeunes, nous agissons pour l’épanouissement des jeunes à travers le numérique, l’éducation, la solidarité et l’engagement communautaire.">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'og-image.png' %}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ request.build_absolute_uri }}">
+    <meta property="twitter:title" content="Connect Jeunes | Construire des ponts pour l’autonomisation des jeunes !">
+    <meta property="twitter:description" content="Chez Connect Jeunes, nous agissons pour l’épanouissement des jeunes à travers le numérique, l’éducation, la solidarité et l’engagement communautaire.">
+    <meta property="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'og-image.png' %}">
     {% endblock %}
 
     <!-- CDNs and Fonts -->
