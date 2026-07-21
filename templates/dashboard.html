@@ -160,6 +160,241 @@
         </div>
       </section>
 
+      <!-- Onboarding Pathway Card -->
+      <section class="bg-white rounded-2xl p-6 border border-outline-variant/30 shadow-xl space-y-6">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div>
+            <h3 class="font-headline-md text-headline-md text-primary">Mon Parcours d'Intégration</h3>
+            <p class="text-body-xs text-on-surface-variant font-body-sm">Suivez les 8 étapes clés de votre parcours d'adhésion pour libérer votre plein potentiel.</p>
+          </div>
+          <span class="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-xs font-bold font-display" id="overall-status-badge">Module 1 en cours</span>
+        </div>
+        
+        <!-- Progression indicator -->
+        <div class="space-y-2">
+          <div class="flex justify-between text-xs font-bold text-primary">
+            <span>Progression du Parcours</span>
+            <span id="progress-percentage-text">12%</span>
+          </div>
+          <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+            <div id="progress-bar-fill" class="kinetic-gradient h-full rounded-full transition-all duration-500" style="width: 12.5%"></div>
+          </div>
+        </div>
+
+        <!-- 8 Modules Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- Module 1 -->
+          <div id="module-card-1" class="p-4 rounded-xl border border-primary/20 bg-primary/5 flex flex-col justify-between space-y-2 transition-all">
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-[9px] uppercase font-bold text-primary" id="m1-status-lbl">Module 1 (Actif)</span>
+                <span class="material-symbols-outlined text-primary text-base" id="m1-status-icon">pending</span>
+              </div>
+              <h4 class="font-bold text-xs">Bienvenue à Connect Jeunes</h4>
+              <p class="text-[9px] text-on-surface-variant leading-relaxed">Découvrir l'histoire, la vision, la mission, les valeurs et vos droits &amp; devoirs.</p>
+            </div>
+            <button onclick="openOnboardingModal()" class="w-full mt-2 text-center py-2 bg-primary hover:bg-primary-container text-white rounded-lg text-[10px] font-bold transition-all shadow-sm flex items-center justify-center gap-1">
+              <span class="material-symbols-outlined text-xs">play_arrow</span>
+              <span id="m1-btn-text">Commencer</span>
+            </button>
+          </div>
+
+          <!-- Module 2 -->
+          <div class="p-4 rounded-xl border border-outline-variant/30 flex flex-col justify-between space-y-2 opacity-60">
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-[9px] uppercase font-bold text-outline">Module 2</span>
+                <span class="material-symbols-outlined text-outline text-base">lock</span>
+              </div>
+              <h4 class="font-bold text-xs text-on-surface/80">Projet Professionnel</h4>
+              <p class="text-[9px] text-on-surface-variant">Mieux se connaître, définir son objectif et concevoir son plan d'action.</p>
+            </div>
+          </div>
+
+          <!-- Module 3 -->
+          <div class="p-4 rounded-xl border border-outline-variant/30 flex flex-col justify-between space-y-2 opacity-60">
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-[9px] uppercase font-bold text-outline">Module 3</span>
+                <span class="material-symbols-outlined text-outline text-base">lock</span>
+              </div>
+              <h4 class="font-bold text-xs text-on-surface/80">Compétences Numériques</h4>
+              <p class="text-[9px] text-on-surface-variant">Google Workspace, recherche en ligne, cybersécurité et productivité IA.</p>
+            </div>
+          </div>
+
+          <!-- Module 4 -->
+          <div class="p-4 rounded-xl border border-outline-variant/30 flex flex-col justify-between space-y-2 opacity-60">
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-[9px] uppercase font-bold text-outline">Module 4</span>
+                <span class="material-symbols-outlined text-outline text-base">lock</span>
+              </div>
+              <h4 class="font-bold text-xs text-on-surface/80">Employabilité</h4>
+              <p class="text-[9px] text-on-surface-variant">Optimiser son CV, rédiger sa lettre, LinkedIn et simulations d'entretiens.</p>
+            </div>
+          </div>
+
+          <!-- Module 5 -->
+          <div class="p-4 rounded-xl border border-outline-variant/30 flex flex-col justify-between space-y-2 opacity-60">
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-[9px] uppercase font-bold text-outline">Module 5</span>
+                <span class="material-symbols-outlined text-outline text-base">lock</span>
+              </div>
+              <h4 class="font-bold text-xs text-on-surface/80">Communication &amp; Leadership</h4>
+              <p class="text-[9px] text-on-surface-variant">Prise de parole, travail d'équipe coopératif et gestion constructive des conflits.</p>
+            </div>
+          </div>
+
+          <!-- Module 6 -->
+          <div class="p-4 rounded-xl border border-outline-variant/30 flex flex-col justify-between space-y-2 opacity-60">
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-[9px] uppercase font-bold text-outline">Module 6</span>
+                <span class="material-symbols-outlined text-outline text-base">lock</span>
+              </div>
+              <h4 class="font-bold text-xs text-on-surface/80">Citoyenneté &amp; Engagement</h4>
+              <p class="text-[9px] text-on-surface-variant">Volontariat local, genre, inclusion sociale et développement durable.</p>
+            </div>
+          </div>
+
+          <!-- Module 7 -->
+          <div class="p-4 rounded-xl border border-outline-variant/30 flex flex-col justify-between space-y-2 opacity-60">
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-[9px] uppercase font-bold text-outline">Module 7</span>
+                <span class="material-symbols-outlined text-outline text-base">lock</span>
+              </div>
+              <h4 class="font-bold text-xs text-on-surface/80">Entrepreneuriat</h4>
+              <p class="text-[9px] text-on-surface-variant">Business Model Canvas, étude de marché, financement et gestion de l'innovation.</p>
+            </div>
+          </div>
+
+          <!-- Module 8 -->
+          <div class="p-4 rounded-xl border border-outline-variant/30 flex flex-col justify-between space-y-2 opacity-60">
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-[9px] uppercase font-bold text-outline">Module 8</span>
+                <span class="material-symbols-outlined text-outline text-base">lock</span>
+              </div>
+              <h4 class="font-bold text-xs text-on-surface/80">Les Opportunités</h4>
+              <p class="text-[9px] text-on-surface-variant">Recherche autonome de stages, bourses, concours et appels à projets.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Competences Callout -->
+        <div class="bg-slate-50 p-5 rounded-2xl border border-outline-variant/20 space-y-3">
+          <h4 class="text-xs font-bold text-primary flex items-center gap-1.5 font-display">
+            <span class="material-symbols-outlined text-sm text-secondary font-bold">verified</span>
+            <span>Les 5 compétences clés que je dois maîtriser à la fin du parcours</span>
+          </h4>
+          <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-[11px] text-on-surface-variant">
+            <li class="flex items-center gap-1.5"><span class="text-green-600 font-bold">✓</span> Je sais construire mon projet professionnel.</li>
+            <li class="flex items-center gap-1.5"><span class="text-green-600 font-bold">✓</span> Je sais utiliser les outils numériques essentiels.</li>
+            <li class="flex items-center gap-1.5"><span class="text-green-600 font-bold">✓</span> Je sais rechercher et saisir des opportunités.</li>
+            <li class="flex items-center gap-1.5"><span class="text-green-600 font-bold">✓</span> Je sais communiquer et travailler avec les autres.</li>
+            <li class="flex items-center gap-1.5"><span class="text-green-600 font-bold">✓</span> Je sais m'engager dans ma communauté.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Onboarding Module 1 Modal -->
+      <div id="onboarding-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center hidden transition-opacity duration-300">
+        <div class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh] transform scale-95 transition-transform duration-300 mx-4" id="modal-card">
+          <!-- Modal Header -->
+          <div class="kinetic-gradient p-5 text-white flex justify-between items-center shrink-0">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-2xl">menu_book</span>
+              <h3 class="font-display font-bold text-base md:text-lg text-white">Module 1 : Bienvenue à Connect Jeunes</h3>
+            </div>
+            <button onclick="closeOnboardingModal()" class="text-white/85 hover:text-white transition-colors">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+
+          <!-- Modal Body -->
+          <div class="p-6 md:p-8 overflow-y-auto space-y-8 text-sm leading-relaxed text-on-surface-variant">
+            
+            <!-- Histoire section -->
+            <section class="space-y-3">
+              <h4 class="font-display text-primary text-base font-bold pb-1 border-b border-outline-variant/20 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-secondary font-bold">history</span>
+                <span>L'Histoire de Connect Jeunes</span>
+              </h4>
+              <div class="space-y-4 text-xs md:text-sm text-justify">
+                <p><strong>Tout est parti d'un constat simple :</strong> chaque jour, des milliers de jeunes se lèvent avec des rêves, des talents et une immense envie de réussir. Pourtant, beaucoup avancent seuls. Certains cherchent un emploi sans savoir où trouver les bonnes opportunités. D'autres ont des idées d'entreprise, mais ne connaissent personne pour les accompagner. D'autres encore souhaitent se former, s'engager ou développer leurs compétences, sans savoir vers qui se tourner.</p>
+                <p>Le problème n'est pas que les opportunités n'existent pas. Le problème est qu'elles sont souvent dispersées, difficiles d'accès ou inconnues de ceux qui en ont le plus besoin. Pendant que certains jeunes passent à côté d'une bourse, d'un stage ou d'une formation, d'autres organisations recherchent justement des jeunes motivés sans parvenir à les atteindre.</p>
+                <p><strong>C'est pour créer ce lien qu'est née Connect Jeunes.</strong> Connect Jeunes est née d'une conviction forte : lorsqu'on connecte les bonnes personnes aux bonnes opportunités, des vies changent et des communautés se transforment.</p>
+                <blockquote class="border-l-4 border-primary bg-slate-50 p-3 italic my-3 text-xs text-on-surface font-display">
+                  "Parce que nous sommes convaincus qu'un talent isolé peut rester invisible, mais qu'un talent connecté peut transformer une vie. Et lorsqu'un jeune transforme sa vie, il transforme aussi sa famille, sa commune et sa communauté."
+                </blockquote>
+              </div>
+            </section>
+
+            <!-- Mission, Vision, Valeurs, Positionnement -->
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <h5 class="font-display text-primary font-bold text-xs uppercase flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-secondary font-bold">rocket_launch</span> Mission &amp; Positionnement
+                </h5>
+                <p class="text-xs text-justify">Notre mission n'est pas simplement d'organiser des activités. Notre mission est de créer des <strong>connexions utiles</strong>. Nous connectons les jeunes aux opportunités, aux compétences, aux entreprises, aux partenaires, aux innovations et entre eux. Notre positionnement clé est : <strong>"Connecter les jeunes aux opportunités"</strong>.</p>
+              </div>
+              
+              <div class="space-y-2">
+                <h5 class="font-display text-primary font-bold text-xs uppercase flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-secondary font-bold">visibility</span> Vision &amp; Valeurs
+                </h5>
+                <p class="text-xs text-justify"><strong>Vision :</strong> Créer une société durable où chaque jeune et chaque personne en situation de vulnérabilité peut s’épanouir et contribuer à un avenir plus juste et équitable.<br><strong>Valeurs :</strong> Solidarité, Innovation, Engagement, Respect et Leadership des jeunes.</p>
+              </div>
+            </section>
+
+            <!-- Droits et Devoirs -->
+            <section class="space-y-3">
+              <h4 class="font-display text-primary text-base font-bold pb-1 border-b border-outline-variant/20 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-secondary font-bold">gavel</span>
+                <span>Les Droits et Devoirs du Membre</span>
+              </h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+                <div class="bg-green-50/50 p-4 rounded-xl border border-green-100">
+                  <h5 class="font-display font-bold text-green-800 flex items-center gap-1 mb-2">
+                    <span class="material-symbols-outlined text-base">check_circle</span> Vos Droits
+                  </h5>
+                  <ul class="space-y-1.5 list-disc list-inside text-green-700">
+                    <li>Accéder gratuitement à tous les modules de formation.</li>
+                    <li>Recevoir des alertes prioritaires sur les opportunités.</li>
+                    <li>Participer aux activités et événements de l'association.</li>
+                    <li>Bénéficier du réseau d'accompagnement et de mentorat.</li>
+                  </ul>
+                </div>
+                <div class="bg-red-50/50 p-4 rounded-xl border border-red-100">
+                  <h5 class="font-display font-bold text-red-800 flex items-center gap-1 mb-2">
+                    <span class="material-symbols-outlined text-base">gavel</span> Vos Devoirs
+                  </h5>
+                  <ul class="space-y-1.5 list-disc list-inside text-red-700">
+                    <li>Respecter les valeurs et la charte de Connect Jeunes.</li>
+                    <li>Participer activement aux ateliers de formation.</li>
+                    <li>Faire preuve de solidarité envers les autres membres.</li>
+                    <li>Partager les opportunités avec votre entourage.</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="bg-slate-50 p-4 border-t border-slate-100 flex justify-end gap-3 shrink-0">
+            <button onclick="closeOnboardingModal()" class="px-5 py-2 border border-slate-200 hover:bg-slate-100 rounded-xl text-xs font-bold transition-colors">Plus tard</button>
+            <button onclick="completeModule1()" class="px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-xl text-xs font-bold transition-colors shadow-sm flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">verified_user</span>
+              <span>J'ai compris et je valide le Module 1</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- Recommended Events & Projects Grid -->
       <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
@@ -276,6 +511,91 @@
       alert("Une erreur s'est produite lors de la génération de l'image du badge.");
       badge.classList.add('hover:scale-102', 'duration-300', 'transition-transform');
     });
+  });
+
+  // Onboarding Modal functions
+  function openOnboardingModal() {
+    const modal = document.getElementById('onboarding-modal');
+    const card = document.getElementById('modal-card');
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+      modal.classList.add('opacity-100');
+      card.classList.remove('scale-95');
+      card.classList.add('scale-100');
+    }, 10);
+  }
+
+  function closeOnboardingModal() {
+    const modal = document.getElementById('onboarding-modal');
+    const card = document.getElementById('modal-card');
+    modal.classList.remove('opacity-100');
+    card.classList.remove('scale-100');
+    card.classList.add('scale-95');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 300);
+  }
+
+  function completeModule1() {
+    // Save completion state in localStorage so it persists client-side
+    localStorage.setItem('onboarding_module1_completed', 'true');
+    
+    // Close modal
+    closeOnboardingModal();
+    
+    // Update UI elements to show completion
+    updateModule1UI();
+    
+    // Show success toast
+    alert("Félicitations ! Le Module 1 est désormais validé. Vous faites officiellement partie des talents Connect Jeunes !");
+  }
+
+  function updateModule1UI() {
+    if (localStorage.getItem('onboarding_module1_completed') === 'true') {
+      const card = document.getElementById('module-card-1');
+      const statusLbl = document.getElementById('m1-status-lbl');
+      const statusIcon = document.getElementById('m1-status-icon');
+      const btnText = document.getElementById('m1-btn-text');
+      const overallStatus = document.getElementById('overall-status-badge');
+      const progressText = document.getElementById('progress-percentage-text');
+      const progressBar = document.getElementById('progress-bar-fill');
+
+      if (card) {
+        card.classList.remove('border-primary/20', 'bg-primary/5');
+        card.classList.add('border-green-200', 'bg-green-50/35');
+      }
+      if (statusLbl) {
+        statusLbl.textContent = 'Module 1 (Complété)';
+        statusLbl.classList.remove('text-primary');
+        statusLbl.classList.add('text-green-600');
+      }
+      if (statusIcon) {
+        statusIcon.textContent = 'check_circle';
+        statusIcon.classList.remove('text-primary');
+        statusIcon.classList.add('text-green-600');
+      }
+      if (btnText) {
+        btnText.textContent = 'Revoir';
+      }
+      if (overallStatus) {
+        overallStatus.textContent = 'Module 1 Validé';
+        overallStatus.classList.remove('bg-primary/10', 'text-primary', 'border-primary/20');
+        overallStatus.classList.add('bg-green-100', 'text-green-700', 'border-green-200');
+      }
+      if (progressText) {
+        progressText.textContent = '100% (Bienvenue validé !)';
+      }
+      if (progressBar) {
+        progressBar.style.width = '100%';
+        progressBar.classList.remove('kinetic-gradient');
+        progressBar.classList.add('bg-green-500');
+      }
+    }
+  }
+
+  // Check state on load
+  document.addEventListener('DOMContentLoaded', function() {
+    updateModule1UI();
   });
 </script>
 {% endblock %}

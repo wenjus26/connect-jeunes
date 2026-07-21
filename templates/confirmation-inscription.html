@@ -5,6 +5,22 @@
 
 {% block content %}
 <main class="pt-32 pb-stack-lg px-gutter max-w-container-max mx-auto">
+  <!-- Auto Redirect Banner -->
+  <div id="redirect-banner" class="max-w-4xl mx-auto bg-green-50 border border-green-200 rounded-2xl p-5 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm animate-pulse">
+    <div class="flex items-center gap-4">
+      <div class="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center text-white shrink-0">
+        <span class="material-symbols-outlined text-2xl">chat</span>
+      </div>
+      <div class="text-center sm:text-left">
+        <p class="font-bold text-green-800 text-base">Redirection vers le groupe WhatsApp officiel</p>
+        <p class="text-sm text-green-600 mt-0.5">Vous allez être redirigé automatiquement dans <span id="redirect-countdown" class="font-bold text-lg text-green-800">4</span> secondes.</p>
+      </div>
+    </div>
+    <a href="https://chat.whatsapp.com/LATIf9OAHKr2oR5Z6WLtH7?s=cl&p=i&mlu=0&ilr=0" class="w-full sm:w-auto text-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl text-sm font-bold transition-colors shadow-sm">
+      Rejoindre maintenant
+    </a>
+  </div>
+
   <!-- Success Hero Section -->
   <div class="flex flex-col items-center text-center mb-stack-lg">
     <div class="w-24 h-24 rounded-full bg-secondary-container/20 flex items-center justify-center mb-6 animate-bounce">
@@ -96,7 +112,7 @@
           <h3 class="font-headline-sm text-headline-sm">Rejoindre la Communauté</h3>
         </div>
         <p class="text-body-sm text-on-surface-variant">Accédez à des ressources exclusives et connectez-vous avec d'autres participants via notre groupe WhatsApp officiel.</p>
-        <a class="inline-flex items-center gap-2 text-primary font-label-lg hover:underline" href="https://chat.whatsapp.com/example" target="_blank">
+        <a class="inline-flex items-center gap-2 text-primary font-label-lg hover:underline" href="https://chat.whatsapp.com/LATIf9OAHKr2oR5Z6WLtH7?s=cl&p=i&mlu=0&ilr=0" target="_blank">
           Rejoindre maintenant <span class="material-symbols-outlined">arrow_forward</span>
         </a>
       </div>
@@ -116,4 +132,24 @@
 
 {% block newsletter_cta %}
 <!-- No newsletter block on success page -->
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  // Script de redirection automatique vers le groupe WhatsApp
+  const whatsappUrl = "https://chat.whatsapp.com/LATIf9OAHKr2oR5Z6WLtH7?s=cl&p=i&mlu=0&ilr=0";
+  let countdown = 4;
+  const countdownEl = document.getElementById('redirect-countdown');
+  
+  if (countdownEl) {
+    const interval = setInterval(() => {
+      countdown--;
+      countdownEl.textContent = countdown;
+      if (countdown <= 0) {
+        clearInterval(interval);
+        window.location.href = whatsappUrl;
+      }
+    }, 1000);
+  }
+</script>
 {% endblock %}
