@@ -3,6 +3,39 @@
 
 {% block title %}Connect Jeunes | Construire des ponts pour l’autonomisation des jeunes !{% endblock %}
 
+{% block meta_description %}Chez Connect Jeunes, nous agissons pour l’épanouissement des jeunes à travers le numérique, l’éducation, la solidarité et l’engagement communautaire. Rejoignez notre réseau d'autonomisation.{% endblock %}
+{% block og_title %}Connect Jeunes | Construire des ponts pour l’autonomisation des jeunes !{% endblock %}
+{% block og_description %}Chez Connect Jeunes, nous agissons pour l’épanouissement des jeunes à travers le numérique, l’éducation, la solidarité et l’engagement communautaire. Rejoignez notre réseau d'autonomisation.{% endblock %}
+{% block twitter_title %}Connect Jeunes | Construire des ponts pour l’autonomisation des jeunes !{% endblock %}
+{% block twitter_description %}Chez Connect Jeunes, nous agissons pour l’épanouissement des jeunes à travers le numérique, l’éducation, la solidarité et l’engagement communautaire. Rejoignez notre réseau d'autonomisation.{% endblock %}
+{% block extra_head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Connect Jeunes",
+  "url": "https://connect-jeunes.org",
+  "logo": "https://connect-jeunes.org/static/logo.svg",
+  "sameAs": [
+    "https://www.facebook.com/connectjeune",
+    "https://www.linkedin.com/company/connectjeune"
+  ],
+  "description": "Chez Connect Jeunes, nous agissons pour l'épanouissement des jeunes à travers le numérique, l'éducation, la solidarité et l'engagement communautaire.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cotonou",
+    "addressCountry": "BJ"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+229-01-46-17-16-60",
+    "contactType": "customer service",
+    "email": "connectjeunes1@gmail.com"
+  }
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <!-- Hero Section -->
 <section class="relative h-screen w-full flex items-center overflow-hidden">
