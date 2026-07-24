@@ -21,14 +21,14 @@
     <meta property="og:url" content="{{ request.build_absolute_uri }}">
     <meta property="og:title" content="{% block og_title %}Connect Jeunes | Construire des ponts pour l’autonomisation des jeunes !{% endblock %}">
     <meta property="og:description" content="{% block og_description %}Chez Connect Jeunes, nous agissons pour l’épanouissement des jeunes à travers le numérique, l’éducation, la solidarité et l’engagement communautaire.{% endblock %}">
-    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'og-image.png' %}">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'og.png' %}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ request.build_absolute_uri }}">
     <meta property="twitter:title" content="{% block twitter_title %}Connect Jeunes | Construire des ponts pour l’autonomisation des jeunes !{% endblock %}">
     <meta property="twitter:description" content="{% block twitter_description %}Chez Connect Jeunes, nous agissons pour l’épanouissement des jeunes à travers le numérique, l’éducation, la solidarité et l’engagement communautaire.{% endblock %}">
-    <meta property="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'og-image.png' %}">
+    <meta property="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'og.png' %}">
     {% endblock %}
 
     <!-- CDNs and Fonts -->
